@@ -1,0 +1,16 @@
+admin:
+  fellows:
+  groups:
+
+user:
+  fellows:
+  groups:
+
+soyo:
+  roles:
+
+swagger:
+  client_id:
+
+connector_uris: s
+s: https://dev-bbva-gateway.appspot.com

@@ -1,0 +1,13 @@
+admin:
+  fellows:
+  groups:
+
+user:
+  fellows:
+  groups:
+
+soyo:
+  roles:
+
+connector_uris: s
+s: https://gapis.bbva.com

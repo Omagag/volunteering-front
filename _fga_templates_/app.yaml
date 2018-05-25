@@ -1,0 +1,69 @@
+service: default
+runtime: python27
+api_version: 1
+threadsafe: true
+
+env_variables:
+
+  APP_PROPERTIES: lib/fga/resources:resources
+  PROPERTIES_NAMESPACE: default
+  BBVA_ENV: {{ env }}
+
+handlers:
+
+- url: /favicon\.ico
+  static_files: src/web/static/favicon.ico
+  upload: src/web/static/favicon.ico
+  secure: always
+
+- url: /(.*\.(html|js|css|svg|json|png|jpg|gif|map|woff|ttf|ico))$
+  static_files: src/web/\1
+  upload: src/web/.*\.(html|js|css|svg|json|png|jpg|gif|map|woff|ttf|ico)
+  application_readable: True
+  secure: always
+  login: required
+
+- url: /.*
+  script: main.app
+  secure: always
+
+builtins:
+
+- remote_api: on
+
+skip_files:
+
+- .idea/
+- .eclipse/
+- .vscode
+- ^/*\.iml
+- ^(.*\/)?.*\.py[co]$
+- \..*
+- docs/
+- env.json
+- fga-cli.py
+- node_modules/
+- package.json
+- README.md
+- requirements.*\.txt
+- v?env/
+- webapp/
+- webpack.*\.js
+- _fga_templates_/
+{% if env=='pro' %}
+- resources/au.bbva.com/
+- resources/dev.bbva.com/
+- lib/fga/resources/au.bbva.com/
+- lib/fga/resources/dev.bbva.com/
+{% elif env=='au' %}
+- resources/bbva.com/
+- resources/dev.bbva.com/
+- lib/fga/resources/bbva.com/
+- lib/fga/resources/dev.bbva.com/
+{% else %}
+- resources/au.bbva.com/
+- resources/bbva.com/
+- lib/fga/resources/au.bbva.com/
+- lib/fga/resources/bbva.com/
+{% endif %}
+

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="webapp">
+	<head>
+		<base href="/">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="https://storage.googleapis.com/bbva-front.appspot.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<script src="https://storage.googleapis.com/bbva-front.appspot.com/bbva.front/bbva.front.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="fga-front root-container" app-view-segment="0"></div>
+		<script>
+		    angular.module("webapp")
+				.constant(
+					"userSession", {{ session | tojson | safe }}
+				)
+				.constant(
+					"environment", {{ environment | tojson | safe }}
+				)
+		</script>
+	</body>
+</html>

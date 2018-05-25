@@ -1,0 +1,200 @@
+@font-face {
+  font-family: bbvaDefaultFont;
+  src: url("https://storage.googleapis.com/bbva-front.appspot.com/fonts/bbvaweb/bbvaweb-book.woff") format("woff"), url("https://storage.googleapis.com/bbva-front.appspot.com/fonts/bbvaweb/bbvaweb-book.ttf") format("opentype"), url("https://storage.googleapis.com/bbva-front.appspot.com/fonts/bbvaweb/bbvaweb-book.svg") format("SVG"), url("https://storage.googleapis.com/bbva-front.appspot.com/fonts/bbvaweb/bbvaweb-book.eot") format("embedded-opentype");
+}
+
+@font-face {
+  font-family: bbvaLightFont;
+  src:  url("https://storage.googleapis.com/bbva-front.appspot.com/fonts/bbvaweb/bbvaweb-light.ttf") format("opentype"),url("https://storage.googleapis.com/bbva-front.appspot.com/fonts/bbvaweb/bbvaweb-light.woff") format("woff"), url("https://storage.googleapis.com/bbva-front.appspot.com/fonts/bbvaweb/bbvaweb-light.svg") format("SVG"), url("https://storage.googleapis.com/bbva-front.appspot.com/fonts/bbvaweb/bbvaweb-light.eot") format("embedded-opentype");
+}
+
+$bbvaGray1: #f8f8f8;
+$bbvaGray2: #eaebed;
+$bbvaGray3: #dddfe2;
+
+// Primary Colors
+
+// BBVA Blue Spectrum
+$bbvaColorB: #094FA4;
+$bbvaColorB1: #006EC1;
+$bbvaColorB2: #009EE5;
+$bbvaColorB3: #52BCEC;
+$bbvaColorB4: #8BD1F3;
+$bbvaColorB5: #B5E5F9;
+// BBVA White
+$bbvaColorW: #FFFFFF;
+// BBVA Dark White
+$bbvaColorW1: #F2F2F2;
+// BBVA Grayscale
+$bbvaColorK: #000000;
+$bbvaColorK1: #4D4D4F;
+$bbvaColorK2: #6D6E71;
+$bbvaColorK3: #939598;
+$bbvaColorK4: #BCBEC0;
+$bbvaColorK5: #D1D3D4;
+
+// Secondary Colors
+
+// BBVA Yellow
+$bbvaColorY: #FDBD2C;
+$bbvaColorY1: #FED476;
+$bbvaColorY2: #FEDB8B;
+$bbvaColorY3: #FEE4AB;
+$bbvaColorY4: #FEEBBF;
+$bbvaColorY5: #FFF5E0;
+// BBVA Orange
+$bbvaColorO: #F6891E;
+$bbvaColorO1: #FAB96D;
+$bbvaColorO2: #FAC483;
+$bbvaColorO3: #FCD4A5;
+$bbvaColorO4: #FDDFBB;
+$bbvaColorO5: #FEEFDE;
+// BBVA Magenta
+$bbvaColorR: #C8175E;
+$bbvaColorR1: #DC7A9B;
+$bbvaColorR2: #E08DA7;
+$bbvaColorR3: #E8ACBE;
+$bbvaColorR4: #EEC2CF;
+$bbvaColorR5: #F3D7DE;
+// BBVA Green
+$bbvaColorG: #86C82D;
+$bbvaColorG1: #B0DB76;
+$bbvaColorG2: #BDE18B;
+$bbvaColorG3: #CFE9AB;
+$bbvaColorG4: #DAEEC0;
+$bbvaColorG5: #EDF7DF;
+// BBVA Lemon
+$bbvaColorN: #B8C204;
+$bbvaColorN1: #D1D75C;
+$bbvaColorN2: #D8DD75;
+$bbvaColorN3: #E3E79B;
+$bbvaColorN4: #EAEDB4;
+$bbvaColorN5: #F4F6D9;
+// BBVA Turquoise
+$bbvaColorT: #3EB6BB;
+$bbvaColorT1: #82D0D3;
+$bbvaColorT2: #95D7DA;
+$bbvaColorT3: #B2E2E4;
+$bbvaColorT4: #C5E9EB;
+$bbvaColorT5: #E2F4F5;
+
+@mixin hand-cursor () {
+  cursor: pointer !important;
+  cursor: hand !important;
+}
+
+@mixin transition($arguments...) {
+
+  transition: $arguments;
+  -webkit-transition: $arguments;
+  -moz-transition: $arguments;
+  -o-transition: $arguments;
+
+}
+
+@mixin border-radius($arguments...) {
+  border-radius: $arguments;
+  -webkit-border-radius: $arguments;
+  -moz-border-radius: $arguments;
+
+}
+
+@mixin webkit-custom-scroll($width,$primaryColor,$bgColor,$radius:0px){
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 $width rgba(0, 0, 0, 0.3);
+    background-color: $bbvaColorW1;
+  }
+  &::-webkit-scrollbar {
+    width: $width;
+    background-color: $bgColor;
+    @include border-radius($radius);
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primaryColor;
+    @include border-radius($radius);
+
+  }
+}
+
+@mixin opacityHide($showValue,$time,$timeFunction,$delay) {
+
+  @include transition(opacity $time $timeFunction $delay);
+
+  &.ng-hide {
+
+    opacity: 0;
+
+  }
+
+  &.ng-hide-add-active {
+
+    opacity: 0;
+  }
+
+  &.ng-hide-remove-active {
+
+    opacity: $showValue;
+
+  }
+}
+
+@mixin horizontalCollapseHide($showValue,$time,$timeFunction,$delay) {
+
+  width: $showValue;
+
+  @include transition(width $time $timeFunction $delay, opacity $time $timeFunction $delay);
+
+  &.ng-hide-add-active {
+
+    width: 0;
+    opacity: 0;
+
+  }
+
+  &.ng-hide {
+
+    width: 0;
+    opacity: 0;
+  }
+  &.ng-hide-remove-active {
+
+    width: $showValue;
+    opacity: 1;
+  }
+}
+
+@mixin verticalCollapseHide($showValue,$time,$timeFunction,$delay) {
+
+  max-height: $showValue;
+
+  @include transition(max-height $time $timeFunction $delay, opacity $time $timeFunction $delay);
+
+  &.ng-hide-add-active {
+
+    overflow: hidden !important;
+
+    opacity: 0;
+
+    max-height: 0;
+  }
+
+  &.ng-hide {
+
+    opacity: 0;
+
+    max-height: 0;
+  }
+
+  &.ng-hide-remove-active {
+
+    max-height: $showValue;
+
+    opacity: 1;
+
+    overflow: hidden !important;
+
+  }
+}
