@@ -1,4 +1,5 @@
 import "./home.controller"
+import "./home.service"
 import template from "./home.html";
 
 let homeRoute = {
