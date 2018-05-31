@@ -1,0 +1,57 @@
+<table>
+    <thead>
+        <tr>
+            <th>BECARIO</th>
+            <th>AÑO ESCOLAR</th>
+            <th>ESCUELA/CAMPUS</th>
+            <th>PROMEDIO</th>
+            <th>AGENDAR SESIÓN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--<scholarship-holder-detail ng-repeat="scholarshipHolder in $ctrl.data.scholarshipHolders"></scholarship-holder-detail>-->
+        <tr ng-repeat="scholarshipHolder in $ctrl.scholarshipHolders">
+            <td class="table-data-main">
+                <a href="#">
+                    <p>{{scholarshipHolder.name}}</p>
+                </a>
+                <p>Por los que se quedan</p>
+                <p>Universidad</p>
+                <p>Ixtlahuaca, México </p>
+            </td>
+            <td>1er año</td>
+            <td>Tec de Mty Campus Mty </td>
+            <td>N/A</td>
+            <td>
+                <svg class="circle-status-svg">
+                    <circle class="circle-pending-and-evaluated"/>
+                    <text x=9 y=18 class="svg-text">1</text>
+                </svg>
+                <svg class="circle-status-svg">
+                    <circle class="circle-pending-and-evaluated"/>
+                    <text x=9 y=18 class="svg-text">2</text>
+                </svg>
+                <svg class="circle-status-svg">
+                    <circle class="circle-scheduled"/>
+                    <text x=9 y=18 class="svg-text">3</text>
+                </svg>
+                <svg class="circle-status-svg">
+                    <circle class="circle-scheduled"/>
+                    <text x=9 y=18 class="svg-text">4</text>
+                </svg>
+                <svg class="circle-status-svg">
+                    <circle class="circle-not-scheduled"/>
+                    <text x=9 y=18 class="svg-text-black">5</text>
+                </svg>
+                <svg class="circle-status-svg">
+                    <circle class="circle-not-scheduled"/>
+                    <text x=9 y=18 class="svg-text-black">6</text>
+                </svg>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+
+<scholarship-holder-status-nomenclature></scholarship-holder-status-nomenclature>

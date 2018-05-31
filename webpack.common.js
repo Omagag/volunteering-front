@@ -28,6 +28,10 @@ module.exports = {
           autoprefixer({ browsers: 'last 2 versions' }),
         ]
       }
+    }),
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
     })
   ],
   output: {

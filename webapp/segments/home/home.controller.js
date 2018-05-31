@@ -2,17 +2,18 @@ import angular from "angular";
 
 class HomeController {
     
-    constructor(HomeService){
-        this._homeService = HomeService;
-        this.userData = this._homeService.userData;
+    constructor(HomeService, userSession){
+        this._mentorCardService = HomeService;
+        this.userData = this._mentorCardService.userData;
+        this.userSession = userSession;
         this.loadPage();
     }
     loadPage() {
-        this._homeService.loadData();
+        this._mentorCardService.loadData();
     }
 }
 
-HomeController.$inject = ['HomeService'];
+HomeController.$inject = ["HomeService", "userSession"];
 
 angular.module("webapp")
        .controller("HomeController", HomeController);
