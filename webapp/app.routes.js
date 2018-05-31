@@ -1,6 +1,7 @@
 import homeRoute from "./segments/home/home.routes";
-import mentorCardRoute from "./segments/mentor/card/card.routes";
-import scholarshipHolderHomeRoute from "./segments/scholarshipHolder/scholarship-holder.routes";
+import mentorRoute from "./segments/mentor/mentor.routes";
+import scholarshipHolderRoute from "./segments/scholarshipHolder/list/scholarship-holder-list.routes";
+import scholarshipHolderCardRoute from "./segments/scholarshipHolder/card/scholarship-holder-card.routes";
 
 import "./assets/styles/bbva-fonts.scss";
 import "./assets/styles/bbva-colors.scss";
@@ -20,13 +21,15 @@ let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
 
     $routeSegmentProvider
         .segment( "home", homeRoute )
-        .segment("mentorCard", mentorCardRoute)
-        .segment("scholarshipHolderHome", scholarshipHolderHomeRoute);
+        .segment("mentor", mentorRoute)
+        .segment("scholarshipHolder", scholarshipHolderRoute)
+        .segment("scholarshipHolderCard", scholarshipHolderCardRoute);
 
     $routeSegmentProvider
 		.when( "/", "home" )
-        .when("/mentor/card", "mentorCard")
-        .when("/scholarship-holder/", "scholarshipHolderHome");
+        .when("/mentor/", "mentor")
+        .when("/scholarship-holder/", "scholarshipHolder")
+        .when("/scholarship-holder/card", "scholarshipHolderCard");
 
     // configure html5 to get links working on jsfiddle
 	$locationProvider.html5Mode( true );

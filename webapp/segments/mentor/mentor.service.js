@@ -1,6 +1,6 @@
 import angular from "angular";
 
-class MentorCardService {
+class MentorService {
 
     constructor(){
         this.userData = {};
@@ -13,4 +13,4 @@ class MentorCardService {
 }
 
 angular.module("webapp")
-    .service("MentorCardService", MentorCardService);
+    .service("MentorService", MentorService);
