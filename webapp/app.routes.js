@@ -1,8 +1,3 @@
-import homeRoute from "./segments/home/home.routes";
-import mentorRoute from "./segments/mentor/mentor.routes";
-import scholarshipHolderRoute from "./segments/scholarshipHolder/list/scholarship-holder-list.routes";
-import scholarshipHolderCardRoute from "./segments/scholarshipHolder/card/scholarship-holder-card.routes";
-
 import "./assets/styles/bbva-fonts.scss";
 import "./assets/styles/bbva-colors.scss";
 import "./assets/styles/coronita.scss";
@@ -11,6 +6,11 @@ import "./assets/styles/bbva-main.scss";
 
 import "./assets/js/main";
 import "./assets/js/jquery.flowup-labels";
+
+import homeRoute from "./segments/home/home.routes";
+import mentorRoute from "./segments/mentor/mentor.routes";
+import scholarshipHolderRoute from "./segments/scholarshipHolder/list/scholarship-holder-list.routes";
+import scholarshipHolderCardRoute from "./segments/scholarshipHolder/card/scholarship-holder-card.routes";
 
 import "./segments/layout/header.component";
 import "./segments/layout/nav.component";
@@ -29,7 +29,7 @@ let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
 		.when( "/", "home" )
         .when("/mentor/", "mentor")
         .when("/scholarship-holder/", "scholarshipHolder")
-        .when("/scholarship-holder/card", "scholarshipHolderCard");
+        .when("/scholarship-holder/:id/card", "scholarshipHolderCard");
 
     // configure html5 to get links working on jsfiddle
 	$locationProvider.html5Mode( true );

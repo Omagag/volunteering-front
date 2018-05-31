@@ -2,17 +2,17 @@ import angular from "angular";
 
 class ScholarshipHolderCardController {
     
-    constructor(ScholarshipHolderService){
+    constructor(ScholarshipHolderService, userSession, $routeParams){
         this._scholarshipHolderService = ScholarshipHolderService;
         this.data = this._scholarshipHolderService.data;
-        this.loadScholarshipHolders();
+        this.get(parseInt($routeParams.id));
     }
-    loadScholarshipHolders() {
-        this._scholarshipHolderService.loadList();
+    get(id) {
+        this._scholarshipHolderService.get(id);
     }
 }
 
-ScholarshipHolderCardController.$inject = ["ScholarshipHolderService", "userSession"];
+ScholarshipHolderCardController.$inject = ["ScholarshipHolderService", "userSession", "$routeParams"];
 
 angular.module("webapp")
        .controller("ScholarshipHolderCardController", ScholarshipHolderCardController);

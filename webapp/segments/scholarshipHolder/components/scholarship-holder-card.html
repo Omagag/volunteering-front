@@ -1,5 +1,5 @@
 <section class="section-white">
-    <h3 class="bbva-medium-blue border-after-name-section">Berenice Fuentes Arroyo</h3>
+    <h3 class="bbva-medium-blue border-after-name-section">{{$ctrl.scholarshipHolder.name}}</h3>
     <div class="container-data-card">
         <div class="profile-picture">
             <img src="../../../assets/img/foto_perfil.png">
@@ -7,10 +7,10 @@
 
         <!--<div class="data-card">-->
         <div>
-            <p>Tec de Mty Campus Mty </p>
-            <p>Universidad</p>
-            <p>1er año</p>
-            <p>9.2</p>
+            <p>{{$ctrl.scholarshipHolder.campus}}</p>
+            <p>{{$ctrl.scholarshipHolder.school}}</p>
+            <p>{{$ctrl.scholarshipHolder.grade}}</p>
+            <p>{{$ctrl.scholarshipHolder.average}}</p>
         </div>
         <div>
             <p>Cel: <span>#### ####</span></p>
@@ -23,15 +23,7 @@
 <section class="section-white">
     <!--<section class="">-->
     <h4 class="border-after-name-section">Mi biograf&iacute;a</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-        eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit
-        anim id est laborum."</p>
+    <p>{{$ctrl.scholarshipHolder.biography}}</p>
     <!--</section>-->
 </section>
 <section class="section-white">
@@ -59,6 +51,7 @@
     <!--<section class="">-->
     <h4 class="border-after-name-section">Mis Sesiones</h4>
     <div class="sessions-wrapper">
+        <scholarship-holder-session-card session="session" ng-repeat="session in $ctrl.scholarshipHolder.sessions"></scholarship-holder-session-card>
         <div class="container-session">
             <h5>Sesi&oacute;n Uno</h5>
             <div class="rectangle-done">

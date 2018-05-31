@@ -12,41 +12,27 @@
         <!--<scholarship-holder-detail ng-repeat="scholarshipHolder in $ctrl.data.scholarshipHolders"></scholarship-holder-detail>-->
         <tr ng-repeat="scholarshipHolder in $ctrl.scholarshipHolders">
             <td class="table-data-main">
-                <a href="/scholarship-holder/card">
+                <a href="/scholarship-holder/{{scholarshipHolder.id}}/card">
                     <p>{{scholarshipHolder.name}}</p>
                 </a>
-                <p>Por los que se quedan</p>
-                <p>Universidad</p>
-                <p>Ixtlahuaca, México </p>
+                <p>{{scholarshipHolder.cause}}</p>
+                <p>{{scholarshipHolder.school}}</p>
+                <p>{{scholarshipHolder.address}}</p>
             </td>
-            <td>1er año</td>
-            <td>Tec de Mty Campus Mty </td>
-            <td>N/A</td>
+            <td>{{scholarshipHolder.grade}}</td>
+            <td>{{scholarshipHolder.campus}}</td>
+            <td>{{scholarshipHolder.average}}</td>
             <td>
-                <svg class="circle-status-svg">
-                    <circle class="circle-pending-and-evaluated"/>
-                    <text x=9 y=18 class="svg-text">1</text>
-                </svg>
-                <svg class="circle-status-svg">
-                    <circle class="circle-pending-and-evaluated"/>
-                    <text x=9 y=18 class="svg-text">2</text>
-                </svg>
-                <svg class="circle-status-svg">
-                    <circle class="circle-scheduled"/>
-                    <text x=9 y=18 class="svg-text">3</text>
-                </svg>
-                <svg class="circle-status-svg">
-                    <circle class="circle-scheduled"/>
-                    <text x=9 y=18 class="svg-text">4</text>
-                </svg>
-                <svg class="circle-status-svg">
-                    <circle class="circle-not-scheduled"/>
-                    <text x=9 y=18 class="svg-text-black">5</text>
-                </svg>
-                <svg class="circle-status-svg">
-                    <circle class="circle-not-scheduled"/>
-                    <text x=9 y=18 class="svg-text-black">6</text>
-                </svg>
+                <scholarship-holder-sessions sessions="scholarshipHolder.sessions"></scholarship-holder-sessions>
+                <!--<svg class="circle-status-svg" ng-repeat="session in scholarshipHolder.sessions">-->
+                    <!--<circle class="circle-pending-and-evaluated" ng-if="session.status == 'Pending for Evaluated'"/>-->
+                    <!--<circle class="circle-scheduled" ng-if="session.status == 'Scheduled'"/>-->
+                    <!--<circle class="circle-not-scheduled" ng-if="session.status == 'Not Scheduled'"/>-->
+                    <!--<circle class="circle-not-done-and-evaluated" ng-if="session.status == 'Not Done and Evaluated'"/>-->
+                    <!--<circle class="circle-done" ng-if="session.status == 'Done'"/>-->
+                    <!--<text x=9 y=18 class="svg-text" ng-if="session.status != 'Not Scheduled'">{{session.id}}</text>-->
+                    <!--<text x=9 y=18 class="svg-text-black" ng-if="session.status == 'Not Scheduled'">{{session.id}}</text>-->
+                <!--</svg>-->
             </td>
 
         </tr>

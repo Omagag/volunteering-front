@@ -1,6 +1,6 @@
 import "./scholarship-holder-list.controller"
 import "../scholarship-holder.service"
-import template from "./scholarship-holder-list.html";
+import template from "./scholarship-holder-list-view.html";
 
 // Scholarship Holder List
 import "../components/scholarship-holder-list.component";

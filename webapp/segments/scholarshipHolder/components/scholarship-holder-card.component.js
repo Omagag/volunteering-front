@@ -16,6 +16,6 @@ angular.module("webapp")
            controller: ScholarshipHolderCardController,
            templateUrl: template,
            bindings: {
-               scholarshipHolders: "<"
+               scholarshipHolder: "<"
            }
        });
