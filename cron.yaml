@@ -1,0 +1,15 @@
+cron:
+# View the reference:
+# https://cloud.google.com/appengine/docs/standard/python/config/cronref
+# Example:
+#- description: "daily summary job"
+#  url: /tasks/summary
+#  schedule: every 24 hours
+#- description: "monday morning mailout"
+#  url: /mail/weekly
+#  schedule: every monday 09:00
+#  timezone: Australia/NSW
+#- description: "new daily summary job"
+#  url: /tasks/summary
+#  schedule: every 24 hours
+#  target: beta

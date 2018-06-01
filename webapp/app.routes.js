@@ -11,6 +11,7 @@ import homeRoute from "./segments/home/home.routes";
 import mentorRoute from "./segments/mentor/mentor.routes";
 import scholarshipHolderRoute from "./segments/scholarshipHolder/list/scholarship-holder-list.routes";
 import scholarshipHolderCardRoute from "./segments/scholarshipHolder/card/scholarship-holder-card.routes";
+import diaryRoute from "./segments/diary/diary.routes";
 
 import "./segments/layout/header.component";
 import "./segments/layout/nav.component";
@@ -23,13 +24,15 @@ let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
         .segment( "home", homeRoute )
         .segment("mentor", mentorRoute)
         .segment("scholarshipHolder", scholarshipHolderRoute)
-        .segment("scholarshipHolderCard", scholarshipHolderCardRoute);
+        .segment("scholarshipHolderCard", scholarshipHolderCardRoute)
+        .segment("diary", diaryRoute);
 
     $routeSegmentProvider
 		.when( "/", "home" )
         .when("/mentor/", "mentor")
         .when("/scholarship-holder/", "scholarshipHolder")
-        .when("/scholarship-holder/:id/card", "scholarshipHolderCard");
+        .when("/scholarship-holder/:id/card", "scholarshipHolderCard")
+        .when("/diary", "diary");
 
     // configure html5 to get links working on jsfiddle
 	$locationProvider.html5Mode( true );

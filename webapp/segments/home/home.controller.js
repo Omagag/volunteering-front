@@ -3,13 +3,13 @@ import angular from "angular";
 class HomeController {
     
     constructor(HomeService, userSession){
-        this._mentorCardService = HomeService;
-        this.userData = this._mentorCardService.userData;
+        this._homeService = HomeService;
+        this.userData = this._homeService.userData;
         this.userSession = userSession;
         this.loadPage();
     }
     loadPage() {
-        this._mentorCardService.loadData();
+        this._homeService.loadData();
     }
 }
 

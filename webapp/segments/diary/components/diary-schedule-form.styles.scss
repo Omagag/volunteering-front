@@ -1,0 +1,35 @@
+.wainting-scholarship-holders-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.waiting-scholarships-holders {
+  display: inline-block;
+}
+
+.report-calendar {
+  width: 46%;
+  height: 290px;
+  display: inline-block;
+  padding: 0 10px;
+  text-align: center;
+  /*margin: 0 10px;*/
+}
+
+.report-calendars-section {
+  width: 59%;
+  display: inline-block;
+  float: right;
+}
+
+.span-divisor {
+  border-right: 2px solid #bbb;
+}
+
+.span-divisor-sesion {
+  /*border-right: 2px solid #bbb;*/
+  /*border: 1px solid #555;*/
+  border-bottom: 1px solid #cdcdcd;
+}

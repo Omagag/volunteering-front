@@ -1,0 +1,9 @@
+dispatch:
+# View the reference
+# https://cloud.google.com/appengine/docs/standard/python/config/dispatchref
+# Example:
+#- url: "*/"
+#  module: default
+#
+#- url: "*/other/*"
+#  module: other

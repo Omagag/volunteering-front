@@ -1,0 +1,30 @@
+<section id="ver" class="orden_calendar">
+    <!--<section id="oculto" class="orden_calendar" style="display:none;">-->
+    <h3>AGENDAR</h3>
+
+    <form class="">
+        <div class="report-calendar ">
+            <input class="orden-fecha" type="text" id="from" name="from" placeholder="Selecciona Fecha" onchange="validateInputs()">
+        </div>
+
+        <div class="form-field text-field col-lg-3 col-md-6 col-sm-6 col-xs-12 fl_wrap focused">
+            <input type="time" name="hora" class="fl_input">
+            <label class="fl_label">De</label>
+        </div>
+
+
+        <div class="form-field text-field col-lg-3 col-md-6 col-sm-6 col-xs-12 fl_wrap focused">
+            <input type="time" name="hora" class="fl_input">
+            <label class="fl_label">A</label>
+        </div>
+
+        <!--agregar la url al boton agendar y que me lleve a agendar-->
+        <section class="align-center">
+            <a href="card.htmlscholarship-card.html" th:href="@{/scholarship-holder/card}">
+                <button type="button" class="btn btn-blue" a="">agendar</button>
+            </a>
+        </section>
+    </form>
+
+    <!--<form action="https://www.anerbarrena.com/demos/2014/002-time-input-html5.php" name="formulario">-->
+</section>
