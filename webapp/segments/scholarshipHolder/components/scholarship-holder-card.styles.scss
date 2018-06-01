@@ -90,7 +90,7 @@
 }
 .sessions-wrapper {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(5,1fr);
   /*display: flex;*/
   /*justify-content: center;*/
 }
@@ -113,6 +113,14 @@
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .container-data-card {
+    grid-template-columns: repeat(3,1fr);
+  }
+  .sessions-wrapper {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
 @media (max-width: 767px) {
   .container-data-card {
     grid-template-columns: repeat(3,1fr);

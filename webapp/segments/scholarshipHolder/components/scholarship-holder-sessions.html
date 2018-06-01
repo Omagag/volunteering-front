@@ -1,9 +1,8 @@
 <svg class="circle-status-svg" ng-repeat="session in $ctrl.sessions">
-    <circle class="circle-pending-and-evaluated" ng-if="session.status == 'Pending for Evaluated'"/>
-    <circle class="circle-scheduled" ng-if="session.status == 'Scheduled'"/>
-    <circle class="circle-not-scheduled" ng-if="session.status == 'Not Scheduled'"/>
-    <circle class="circle-not-done-and-evaluated" ng-if="session.status == 'Not Done and Evaluated'"/>
-    <circle class="circle-done" ng-if="session.status == 'Done'"/>
-    <text x=9 y=18 class="svg-text" ng-if="session.status != 'Not Scheduled'">{{session.id}}</text>
-    <text x=9 y=18 class="svg-text-black" ng-if="session.status == 'Not Scheduled'">{{session.id}}</text>
+    <circle ng-class="session.status == 'Done' ? 'circle-done' :
+    (session.status == 'Not Done and Evaluated' ? 'circle-not-done-and-evaluated' :
+    (session.status == 'Not Scheduled' ? 'circle-not-scheduled' :
+    (session.status == 'Scheduled' ? 'circle-scheduled' :
+    (session.status == 'Pending for Evaluated' ? 'circle-pending-and-evaluated' : ''))))"/>
+    <text x=9 y=18 ng-class="session.status != 'Not Scheduled' ? 'svg-text' : 'svg-text-black'">{{session.id}}</text>
 </svg>

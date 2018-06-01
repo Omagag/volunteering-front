@@ -1,13 +1,12 @@
 <div class="container-session">
     <h5>Sesi&oacute;n Uno</h5>
-    <!--<div class="rectangle-pending-and-evaluated" ng-if="$ctrl.session.status == 'Pending for Evaluated'">-->
-    <!--<div class="rectangle-scheduled" ng-if="$ctrl.session.status == 'Scheduled'">-->
-    <!--<div class="rectangle-not-scheduled" ng-if="$ctrl.session.status == 'Not Scheduled'">-->
-    <!--<div class="rectangle-not-done-and-evaluated" ng-if="$ctrl.session.status == 'Not Done and Evaluated'">-->
-    <!--<div class="rectangle-done" ng-if="$ctrl.session.status == 'Done'">-->
-    <div class="rectangle-done">
+    <div ng-class="$ctrl.session.status == 'Done' ? 'rectangle-done' :
+    ($ctrl.session.status == 'Not Done and Evaluated' ? 'rectangle-not-done-and-evaluated' :
+    ($ctrl.session.status == 'Not Scheduled' ? 'rectangle-not-scheduled' :
+    ($ctrl.session.status == 'Scheduled' ? 'rectangle-scheduled' :
+    ($ctrl.session.status == 'Pending for Evaluated' ? 'rectangle-pending-and-evaluated' : ''))))">
         <p>Fecha: <span>{{$ctrl.session.date}}</span></p>
-        <p>Hora: <span>16:33</span></p>
-        <p>Estatus: <span>Realizada y Evaluada</span></p>
+        <p>Hora: <span>{{$ctrl.session.beginHour}} a {{$ctrl.session.endHour}}</span></p>
+        <p>Estatus: <span>{{$ctrl.session.status}}</span></p>
     </div>
 </div>

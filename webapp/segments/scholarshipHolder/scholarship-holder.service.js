@@ -25,23 +25,38 @@ class ScholarshipHolderService {
                     },
                     {
                         id: 2,
-                        status: "Pending for Evaluated"
+                        status: "Pending for Evaluated",
+                        date: "14/05/2018",
+                        beginHour: "16:30",
+                        endHour: "17:30"
                     },
                     {
                         id: 3,
-                        status: "Scheduled"
+                        status: "Scheduled",
+                        date: "14/05/2018",
+                        beginHour: "16:30",
+                        endHour: "17:30"
                     },
                     {
                         id: 4,
-                        status: "Not Scheduled"
+                        status: "Not Scheduled",
+                        date: "14/05/2018",
+                        beginHour: "16:30",
+                        endHour: "17:30"
                     },
                     {
                         id: 5,
-                        status: "Not Done and Evaluated"
+                        status: "Not Done and Evaluated",
+                        date: "14/05/2018",
+                        beginHour: "16:30",
+                        endHour: "17:30"
                     },
                     {
                         id: 6,
-                        status: "Done"
+                        status: "Done",
+                        date: "14/05/2018",
+                        beginHour: "16:30",
+                        endHour: "17:30"
                     }
                 ]
             },
