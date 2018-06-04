@@ -7,11 +7,17 @@ import "./assets/styles/bbva-main.scss";
 import "./assets/js/main";
 import "./assets/js/jquery.flowup-labels";
 
+// TODO: I'm not sure: Global Services
+import "./segments/services/scholar-level.service";
+
+// Views
 import homeRoute from "./segments/home/home.routes";
 import mentorRoute from "./segments/mentor/mentor.routes";
 import scholarshipHolderRoute from "./segments/scholarshipHolder/list/scholarship-holder-list.routes";
 import scholarshipHolderCardRoute from "./segments/scholarshipHolder/card/scholarship-holder-card.routes";
 import diaryRoute from "./segments/diary/diary.routes";
+import contentLoaderRoute from "./segments/staff/content-loader.routes";
+
 
 import "./segments/layout/header.component";
 import "./segments/layout/nav.component";
@@ -25,14 +31,16 @@ let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
         .segment("mentor", mentorRoute)
         .segment("scholarshipHolder", scholarshipHolderRoute)
         .segment("scholarshipHolderCard", scholarshipHolderCardRoute)
-        .segment("diary", diaryRoute);
+        .segment("diary", diaryRoute)
+        .segment("loadContent" , contentLoaderRoute);
 
     $routeSegmentProvider
 		.when( "/", "home" )
         .when("/mentor/", "mentor")
         .when("/scholarship-holder/", "scholarshipHolder")
         .when("/scholarship-holder/:id/card", "scholarshipHolderCard")
-        .when("/diary", "diary");
+        .when("/diary", "diary")
+        .when("/staff/loadContent", "loadContent");
 
     // configure html5 to get links working on jsfiddle
 	$locationProvider.html5Mode( true );
