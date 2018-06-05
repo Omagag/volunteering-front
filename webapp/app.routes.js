@@ -4,6 +4,7 @@ import "./assets/styles/coronita.scss";
 import "./assets/styles/coronita-small.scss";
 import "./assets/styles/bbva-main.scss";
 
+// Made In-House JS
 import "./assets/js/main";
 import "./assets/js/jquery.flowup-labels";
 
@@ -18,11 +19,9 @@ import scholarshipHolderCardRoute from "./segments/scholarshipHolder/card/schola
 import diaryRoute from "./segments/diary/diary.routes";
 import contentLoaderRoute from "./segments/staff/content-loader.routes";
 
-
 import "./segments/layout/header.component";
 import "./segments/layout/nav.component";
 import "./segments/layout/footer.component";
-
 
 let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
 

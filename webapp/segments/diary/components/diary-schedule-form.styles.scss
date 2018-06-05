@@ -1,3 +1,7 @@
+.text-muted {
+  color: #999999;
+}
+
 .wainting-scholarship-holders-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -9,13 +13,23 @@
   display: inline-block;
 }
 
-.report-calendar {
-  width: 46%;
-  height: 290px;
+.fields-sessions-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.session-calendar {
+  width: 50%;
+  //min-height: 290px;
   display: inline-block;
-  padding: 0 10px;
-  text-align: center;
+  //padding: 0 10px;
+  //text-align: center;
   /*margin: 0 10px;*/
+}
+.session-hours {
+  display: inline-block;
+  width: 50%;
 }
 
 .report-calendars-section {
@@ -33,3 +47,4 @@
   /*border: 1px solid #555;*/
   border-bottom: 1px solid #cdcdcd;
 }
+

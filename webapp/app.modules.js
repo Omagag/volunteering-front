@@ -7,6 +7,16 @@ import "angular-route-segment";
 import ngCookies from "angular-cookies";
 import "angular-translate-loader-static-files";
 
+// import popper from "popper.js";
+// import bootstrap from "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/scss/bootstrap.scss";
+
+import accordion from "angular-ui-bootstrap/src/accordion";
+import datepicker from "angular-ui-bootstrap/src/datepicker";
+import dateparser from "angular-ui-bootstrap/src/dateparser";
+// import uiBootstrap from "angular-ui-bootstrap/dist/ui-bootstrap";
+import "angular-ui-bootstrap/dist/ui-bootstrap-csp.css"
+
 angular.module("webapp", [
 	"angularMoment",
 	ngRoute,
@@ -15,4 +25,10 @@ angular.module("webapp", [
 	ngSanitize,
 	"pascalprecht.translate",
 	ngCookies,
+	// poper,
+	// bootstrap,
+	accordion,
+	datepicker,
+	dateparser
+	// uiBootstrap
 ]);

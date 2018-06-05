@@ -1,28 +1,41 @@
-<section id="ver" class="orden_calendar">
+<section>
     <!--<section id="oculto" class="orden_calendar" style="display:none;">-->
-    <h3>AGENDAR</h3>
+    <!--<h3>AGENDAR</h3>-->
 
-    <form class="">
-        <div class="report-calendar ">
-            <input class="orden-fecha" type="text" id="from" name="from" placeholder="Selecciona Fecha" onchange="validateInputs()">
-        </div>
+    <form>
+        <!--<div class="report-calendar ">-->
+            <!--<input class="orden-fecha" type="text" id="from" name="from" placeholder="Selecciona Fecha" onchange="validateInputs()">-->
+        <!--</div>-->
 
-        <div class="form-field text-field col-lg-3 col-md-6 col-sm-6 col-xs-12 fl_wrap focused">
-            <input type="time" name="hora" class="fl_input">
-            <label class="fl_label">De</label>
-        </div>
+        <article class="fields-sessions-container">
+            <section class="session-hours">
+                <div class="form-field text-field col-lg-6 col-md-6 col-sm-12 col-xs-12 fl_wrap focused">
+                    <input type="time" name="hora" class="fl_input">
+                    <label class="fl_label">De</label>
+                </div>
 
 
-        <div class="form-field text-field col-lg-3 col-md-6 col-sm-6 col-xs-12 fl_wrap focused">
-            <input type="time" name="hora" class="fl_input">
-            <label class="fl_label">A</label>
-        </div>
+                <div class="form-field text-field col-lg-6 col-md-6 col-sm-12 col-xs-12 fl_wrap focused">
+                    <input type="time" name="hora" class="fl_input">
+                    <label class="fl_label">A</label>
+                </div>
+            </section>
+
+
+            <section class="session-calendar">
+                <div class="form-field text-field col-lg-12 col-md-12 col-sm-12 col-xs-12 fl_wrap focused">
+                    <p>{{$ctrl.form.date}}</p>
+                    <label>Fecha</label>
+                </div>
+                <div uib-datepicker ng-model="$ctrl.form.date"></div>
+            </section>
+        </article>
+
+        <div class="separator-20"></div>
 
         <!--agregar la url al boton agendar y que me lleve a agendar-->
         <section class="align-center">
-            <a href="card.htmlscholarship-card.html" th:href="@{/scholarship-holder/card}">
-                <button type="button" class="btn btn-blue" a="">agendar</button>
-            </a>
+            <button type="button" class="btn btn-blue" a="">agendar</button>
         </section>
     </form>
 
