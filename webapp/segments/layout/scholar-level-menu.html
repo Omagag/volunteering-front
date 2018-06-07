@@ -1,0 +1,27 @@
+<nav class="">
+    <section class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <nav class="scholar-nav">
+                    <ul>
+                        <li ng-repeat="scholarLevel in $ctrl.scholarLevels" ng-click="$ctrl.onClickScholarLevel(scholarLevel.id)" ng-class="scholarLevel.class">{{scholarLevel.name}}</li>
+                        <!--<li>Preparatoria</li>-->
+                        <!--<li class="item-selected">Universidad</li>-->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <nav class="">
+        <section id="grade-menu" class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <scholar-grade-menu ng-if="$ctrl.showScholarGradeMenu" scholar-grades="$ctrl.scholarGrades"></scholar-grade-menu>
+                    <!--<scholar-grade-menu scholar-grades="$ctrl.scholarGrades"></scholar-grade-menu>-->
+                </div>
+            </div>
+        </section>
+    </nav>
+
+</nav>

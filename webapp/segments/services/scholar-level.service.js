@@ -10,7 +10,7 @@ class ScholarLevelService {
             {
                 id: 1,
                 name: "Secundaria",
-                gradeLevels: [
+                scholarGrades: [
                     {
                         id: 1,
                         name: "1er Grado"
@@ -24,7 +24,7 @@ class ScholarLevelService {
             {
                 id: 2,
                 name: "Preparatoria",
-                gradeLevels: [
+                scholarGrades: [
                     {
                         id: 3,
                         name: "1 año"
@@ -42,7 +42,7 @@ class ScholarLevelService {
             {
                 id: 3,
                 name: "Licenciatura",
-                gradeLevels: [
+                scholarGrades: [
                     {
                         id: 6,
                         name: "1 año"

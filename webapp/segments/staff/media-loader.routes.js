@@ -4,8 +4,7 @@ import template from "./media-loader-view.html";
 
 import "./media-loader.styles.scss";
 
-// import "../layout/level-scholar-menu.scss";
-import "../layout/level-scholar-menu.component";
+import "../layout/scholar-level-menu.component";
 import "./components/upload-video.component";
 import "./components/upload-resources-row.component";
 

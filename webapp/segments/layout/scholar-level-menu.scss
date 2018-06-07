@@ -1,0 +1,48 @@
+.scholar-nav {
+  //background-color: #fff;
+  border-bottom: 1px solid #1464A5;
+  margin-bottom: 2px;
+}
+
+.scholar-nav {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.scholar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.scholar-nav ul li {
+  //width: 33.33%;
+  height: 40px;
+  color: #666666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.scholar-nav ul li.two {
+  width: 50%;
+}
+.scholar-nav ul li.three {
+  width: 33.33%;
+}
+.scholar-nav ul li.four {
+  width: 25%;
+}
+.scholar-nav ul li.five {
+  width: 20%;
+}
+
+.scholar-nav ul li:hover{
+  background: #D4EDFC;
+  //color: #ffffff;
+}
+
+.scholar-nav ul li.item-selected{
+  background: #1464A5;
+  color: #ffffff;
+}
