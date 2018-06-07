@@ -2,7 +2,7 @@ import angular from "angular";
 
 class LevelScholarMenuController {
     constructor(){
-        this.hideGradeMenu(true);
+        this.hideGradeMenu(false);
     }
 
     hideGradeMenu(enable) {

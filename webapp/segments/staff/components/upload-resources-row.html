@@ -1,0 +1,34 @@
+<article>
+    <section class="scholarship-holder-row-container margin-elements ">
+        <!--<div class="form-field col-lg-2 col-md-2 col-sm-4 col-xs-4 fl_wrap ">-->
+            <!--<select class="select-field contact-select"-->
+                    <!--ng-init="$ctrl.selected= $ctrl.availableOptions[0] "-->
+                    <!--ng-options="option as option.name for option in $ctrl.availableOptions"-->
+                    <!--ng-model="$ctrl.selected" ng-change="$ctrl.validateOptions()">-->
+            <!--</select>-->
+        <!--</div>-->
+
+        <div class="form-field text-field col-lg-4 col-md-4 col-sm-6 col-xs-6 fl_wrap">
+            <input type="text" class="fl_input">
+            <label class="fl_label">Name</label>
+        </div>
+
+        <div ng-if="$ctrl.resource.type == 'URL'" class="form-field text-field col-lg-5 col-md-5 col-sm-6 col-xs-6 fl_wrap">
+            <input type="text" class="fl_input">
+            <label class="fl_label">Url</label>
+        </div>
+        <div ng-if="$ctrl.resource.type == 'FILE'" class="form-field text-field col-lg-5 col-md-5 col-sm-6 col-xs-6 fl_wrap">
+            <input class="button-upload-file" type="file">
+        </div>
+        <!--<div>-->
+            <!--<button type="button" class="button btn-blue">Guardar</button>-->
+        <!--</div>-->
+        
+        <div class="trash-container">
+            <!--<button ng-click="$ctrl.onRemove($ctrl.resource)">-->
+                <img src="../../../assets/img/trash_icon.png" ng-click="$ctrl.onRemove($ctrl.resource)">
+            <!--</button>-->
+        </div>
+    </section>
+
+</article>

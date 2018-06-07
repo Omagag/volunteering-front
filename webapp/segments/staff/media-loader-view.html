@@ -1,0 +1,56 @@
+<app-header></app-header>
+<app-nav></app-nav>
+
+<article class="section-white">
+
+    <level-scholar-menu scholar-levels="CLCtrl.data.scholarLevels"></level-scholar-menu>
+
+    <section class="container-fluid">
+        <div class="container">
+            <div class="row distribution-session-element">
+                <div class="session-menu-container">
+                    <ul class="menu-session-col-6">
+                        <li>Sesi&oacute;n Uno</li>
+                        <li>Sesi&oacute;n Dos</li>
+                        <li>Sesi&oacute;n Tres</li>
+                        <li>Sesi&oacute;n Cuatro</li>
+                        <li class="session-selected">Sesi&oacute;n Cinco</li>
+                        <li>Sesi&oacute;n Cinco</li>
+                        <li>Sesi&oacute;n Cinco</li>
+                        <li>Sesi&oacute;n Cinco</li>
+                        <li>Sesi&oacute;n n..</li>
+                    </ul>
+                </div>
+
+                <article class="upload-resources-container">
+                    <upload-video class="upload-video-container"></upload-video>
+
+                    <section>
+                        <h3>Load Resources</h3>
+                        <!-- Include Upload Resources Row -->
+
+                        <section class="new-resources-buttons">
+                            <button type="button" class="button btn-blue" ng-click="CLCtrl.newResource(CLCtrl.URL_TYPE)">Nueva URL</button>
+                            <div class="separator-h-20"></div>
+                            <button type="button" class="button btn-blue" ng-click="CLCtrl.newResource(CLCtrl.FILE_TYPE)">Nuevo Archivo</button>
+                        </section>
+
+                        <!--<upload-resources-row available-options="CLCtrl.localData.availableOptions"></upload-resources-row>-->
+                        <!--<upload-resources-row available-options="CLCtrl.localData.availableOptions"></upload-resources-row>-->
+                        <upload-resources-row resource="resource" ng-repeat="resource in CLCtrl.resourcesList" on-remove="CLCtrl.removeResource(resource)"></upload-resources-row>
+                        <!--<upload-resources-row type="CLCtrl.FILE_TYPE"></upload-resources-row>-->
+                        <!--<upload-resources-row type="CLCtrl.URL_TYPE"></upload-resources-row>-->
+                    </section>
+
+                    <section class="new-resources-buttons">
+                        <button type="button" class="button btn-blue">Guardar</button>
+                    </section>
+
+                </article>
+            </div>
+        </div>
+    </section>
+
+</article>
+
+<app-footer></app-footer>

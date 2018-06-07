@@ -1,0 +1,34 @@
+.upload-video-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 250px;
+  margin: 15px 0;
+}
+.video-rectangle{
+  height: 100%;
+  border: 2px dashed #BDBDBD;
+  display: flex;
+}
+.aling-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+
+@media (max-width: 1024px) {
+  .video-rectangle {
+    width: 80%;
+  }
+}
+@media (max-width: 767px) {
+
+}
+@media (max-width: 425px) {
+  .upload-video-content {
+    width: 70%;
+  }
+}

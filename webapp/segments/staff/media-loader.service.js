@@ -1,6 +1,6 @@
 import angular from "angular";
 
-class ContentLoaderService {
+class MediaLoaderService {
 
     constructor() {
         this.data = {};
@@ -8,7 +8,7 @@ class ContentLoaderService {
 
     getAvailableOptions() {
         this.data.availableOptions = [
-            {id: 0, name: "Seleccione una opción de carga"},
+            {id: 0, name: "Seleccione una opción"},
             {id: 1, name: "URL"},
             {id: 2, name: "Archivo word"},
             {id: 3, name: "Archivo Excel"},
@@ -20,4 +20,4 @@ class ContentLoaderService {
 }
 
 angular.module("webapp")
-    .service("ContentLoaderService", ContentLoaderService);
+    .service("MediaLoaderService", MediaLoaderService);
