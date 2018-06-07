@@ -3,12 +3,29 @@ import angular from "angular";
 class DiaryService {
 
     constructor(){
-        this.userData = {};
+        this.data = {};
     }
-    loadData() {
-        this.userData.firstname = "Omar";
-        this.userData.surname = "García";
-        this.userData.lastname = "González"
+    loadSessions() {
+        // TODO: Temporal...
+        this.data.scholarshipHolders = [
+            {
+                id: 1,
+                name: "Juan Perez"
+            },
+            {
+                id: 2,
+                name: "Berenice Fuentes"
+            },
+            {
+                id: 3,
+                name: "Deborah Sánchez"
+            },
+            {
+                id: 4,
+                name: "Pedro Rámirez"
+            }
+
+        ];
     }
 }
 

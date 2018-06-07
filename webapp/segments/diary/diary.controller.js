@@ -4,12 +4,10 @@ class DiaryController {
     
     constructor(DiaryService, userSession){
         this._diaryService = DiaryService;
-        this.userData = this._diaryService.userData;
+        this.data = this._diaryService.data;
         this.userSession = userSession;
+        this._diaryService.loadSessions();
         // this.loadPage();
-    }
-    loadPage() {
-        // this._diaryService.loadData();
     }
 }
 
