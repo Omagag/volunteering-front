@@ -6,7 +6,7 @@ import template from "./diary.html";
 import "./components/diary-pending-list.component"
 import "./components/diary-schedule-form.component"
 import "./components/diary-scholarship-holder-row.componet"
-import "./components/diary-scholarship-holder-list.component"
+import "./components/diary-session.component"
 
 let diaryRoute = {
     templateUrl : template,
