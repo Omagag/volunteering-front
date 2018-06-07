@@ -4,6 +4,7 @@ class LevelScholarMenuController {
     constructor(){
         this.hideGradeMenu(true);
     }
+
     hideGradeMenu(enable) {
         let gradeMenu = document.getElementById("grade-menu");
         if (enable) {
@@ -13,8 +14,11 @@ class LevelScholarMenuController {
         }
 
     }
-    onClickScholarLevel(id) {
 
+    onClickScholarLevel(id) {
+       if(id !=null){
+           gradeMenu.className = "show";
+       }
     }
 }
 
