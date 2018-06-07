@@ -2,7 +2,7 @@
     <!--<section id="oculto" class="orden_calendar" style="display:none;">-->
     <!--<h3>AGENDAR</h3>-->
 
-    <form>
+    <form id="dairy-form">
         <!--<div class="report-calendar ">-->
             <!--<input class="orden-fecha" type="text" id="from" name="from" placeholder="Selecciona Fecha" onchange="validateInputs()">-->
         <!--</div>-->
@@ -27,7 +27,7 @@
                     <p>{{$ctrl.form.date}}</p>
                     <label>Fecha</label>
                 </div>
-                <div uib-datepicker ng-model="$ctrl.form.date"></div>
+                <div uib-datepicker="{{$ctrl.format}}" ng-model="$ctrl.form.date"></div>
             </section>
         </article>
 
@@ -35,7 +35,7 @@
 
         <!--agregar la url al boton agendar y que me lleve a agendar-->
         <section class="align-center">
-            <button type="button" class="btn btn-blue" a="">agendar</button>
+            <button type="button" class="button btn-blue" a="">agendar</button>
         </section>
     </form>
 

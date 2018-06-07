@@ -15,22 +15,28 @@
     <div class="container">
         <div class="row">
             <uib-accordion>
-                <article uib-accordion-group heading="Pendings" is-open="true">
+                <article uib-accordion-group is-open="true">
                     <header uib-accordion-heading>
-                        <h4>Pendings Custom</h4>
+                        <h4>Pendings</h4>
                     </header>
                     <section class="wainting-scholarship-holders-list">
-                        <diary-pending-list></diary-pending-list>
+                        <diary-pending-list class="waiting-scholarship-holders-table"></diary-pending-list>
 
-                        <diary-schedule-form></diary-schedule-form>
+                        <diary-schedule-form class="diary-form"></diary-schedule-form>
                     </section>
                 </article>
 
-                <article uib-accordion-group heading="Schedules">
+                <article uib-accordion-group>
+                    <header uib-accordion-heading>
+                        <h4>Schedules</h4>
+                    </header>
                     <h1>Hi!!</h1>
                 </article>
 
-                <article uib-accordion-group heading="Historial">
+                <article uib-accordion-group>
+                    <header uib-accordion-heading>
+                        <h4>Historical</h4>
+                    </header>
                     <h1>Bye!</h1>
                 </article>
             </uib-accordion>

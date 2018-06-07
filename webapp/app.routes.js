@@ -1,3 +1,9 @@
+// // Dependencies
+// import "angular-ui-bootstrap/dist/ui-bootstrap-csp.css";
+// // import "angular-ui-bootstrap/dist/ui-bootstrap";
+import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/js/bootstrap";
+
 import "./assets/styles/bbva-fonts.scss";
 import "./assets/styles/bbva-colors.scss";
 import "./assets/styles/coronita.scss";

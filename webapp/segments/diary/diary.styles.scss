@@ -1,0 +1,56 @@
+.panel .panel-heading {
+  text-align: left;
+  width: 100%;
+  //padding: 5px;
+  padding: 0;
+  border-bottom: 1px solid #1464A5;
+  cursor: pointer;
+  margin-bottom: 5px;
+  background-image: url(../../assets/img/expand_icon.png);
+  background-repeat: no-repeat, repeat;
+  background-position: 96% 50%;
+  background-size: 3%;
+  background-color: #ffffff;
+  //background: #ffffff url(../../assets/img/expand_icon.png) no-repeat 96% 50%;
+}
+.panel.panel-open .panel-heading {
+  border-bottom: 1px solid #1464A5;
+  color: #FFFFFF;
+  background-image: url(../../assets/img/contract_icon.png);
+  background-repeat: no-repeat, repeat;
+  background-color: #1464A5;
+  //background: #1464A5 no-repeat url(../../assets/img/contract_icon.png);
+}
+.panel-heading h4 {
+  margin: 0;
+  padding: 10px;
+}
+.panel.panel-open .panel-heading a:hover,
+.panel.panel-open .panel-heading a:focus {
+  color: #ffffff;
+}
+.panel .panel-heading a:hover {
+  color: #121212;
+}
+.btn {
+  border-radius: 0;
+}
+
+.wainting-scholarship-holders-list {
+  display: flex;
+  //grid-template-columns: 1fr 1fr;
+  //margin-top: 20px;
+  //cursor: pointer;
+  align-items: center;
+}
+
+.waiting-scholarships-holders {
+  display: inline-block;
+}
+
+.waiting-scholarship-holders-table {
+  width: 40%;
+}
+.diary-form {
+  width: 59%;
+}

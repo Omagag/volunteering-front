@@ -7,6 +7,9 @@ class DiaryScheduleFormController {
 
         this.format = "dd/MM/yyyy";
         this.form = {date: date};
+        this.init();
+        // uibDateParser.format(this.format);
+        // uibDateParser.input(this.form.date);
     }
     dateOptions() {
         // let dateOptions = {
@@ -14,19 +17,21 @@ class DiaryScheduleFormController {
         // };
         // return dateOptions;
     }
+
+    init() {
+        $("#dairy-form").FlowupLabels({
+            feature_onInitLoad: true,
+            class_focused:      'focused',
+            class_populated:    'populated'
+        });
+    }
+
 }
 
 DiaryScheduleFormController.$inject = ["uibDateParser"];
 
-// Dependencies
-import "angular-ui-bootstrap/dist/ui-bootstrap-csp.css";
-// import "angular-ui-bootstrap/dist/ui-bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap";
-
 import template from "./diary-schedule-form.html";
 import "./diary-schedule-form.styles.scss";
-
 
 angular.module("webapp")
        .component("diaryScheduleForm", {
