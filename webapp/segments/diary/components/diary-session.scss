@@ -1,0 +1,33 @@
+.session-container {
+  margin: 10px 0;
+}
+.session-header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  //background: #1973B8;
+  color: #ffffff;
+}
+.session-scheduled {
+  background: #1973B8;
+}
+.session-pending-to-evaluate {
+  background: #C49735;
+}
+.session-canceled {
+  background: #c0475e;
+}
+.session-scheduled-again {
+  background: #D4EDFC;
+}
+.session-evaluated {
+  background: #88CA9A;
+}
+.session-header p {
+  margin: 0;
+}
+.session-scholarship-holders {
+  border: 1px solid #1973B8;
+}

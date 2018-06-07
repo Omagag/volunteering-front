@@ -14,7 +14,6 @@
                     <label class="fl_label">De</label>
                 </div>
 
-
                 <div class="form-field text-field col-lg-6 col-md-6 col-sm-12 col-xs-12 fl_wrap focused">
                     <input type="time" name="hora" class="fl_input">
                     <label class="fl_label">A</label>
@@ -27,7 +26,8 @@
                     <p>{{$ctrl.form.date}}</p>
                     <label>Fecha</label>
                 </div>
-                <div uib-datepicker="{{$ctrl.format}}" ng-model="$ctrl.form.date"></div>
+
+                <div uib-datepicker="{{$ctrl.format}}" ng-model="$ctrl.form.date" class="diary-calender"></div>
             </section>
         </article>
 
