@@ -36,6 +36,21 @@
 .scholar-nav ul li.five {
   width: 20%;
 }
+.scholar-nav ul li.six {
+  width: 16.66%;
+}
+.scholar-nav ul li.seven {
+  width: 14.28%;
+}
+.scholar-nav ul li.eight {
+  width: 12.5%;
+}
+.scholar-nav ul li.nine {
+  width: 11.11%;
+}
+.scholar-nav ul li.ten {
+  width: 10%;
+}
 
 .scholar-nav ul li:hover{
   background: #D4EDFC;
@@ -44,5 +59,13 @@
 
 .scholar-nav ul li.item-selected{
   background: #1464A5;
+  color: #ffffff;
+}
+.scholar-nav ul li.item-grade-selected{
+  background: #49A5E6;
+  color: #ffffff;
+}
+.scholar-nav ul li.item-session-selected{
+  background: #072146;
   color: #ffffff;
 }

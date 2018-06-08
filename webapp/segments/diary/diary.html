@@ -11,40 +11,57 @@
     </div>
 </article>
 
+
 <article class="section-white">
     <div class="container">
         <div class="row">
-            <uib-accordion>
-                <article uib-accordion-group is-open="true">
-                    <header uib-accordion-heading>
-                        <h4>Pendings</h4>
-                    </header>
-                    <section class="wainting-scholarship-holders-list">
-                        <diary-pending-list class="waiting-scholarship-holders-table"></diary-pending-list>
 
-                        <diary-schedule-form class="diary-form"></diary-schedule-form>
-                    </section>
-                </article>
+            <scholar-menu scholar-menus="DiaryCtrl.scholarMenuData.scholarLevels" on-menu-selected="DiaryCtrl.onScholarLevelMenuSelected(id)"></scholar-menu>
+            <scholar-menu ng-if="DiaryCtrl.gradeMenus.length > 0" scholar-menus="DiaryCtrl.gradeMenus" item-selected-class="DiaryCtrl.GRADE_SELECTED" on-menu-selected="DiaryCtrl.onScholarGradeMenuSelected(id)"></scholar-menu>
+            <scholar-menu ng-if="DiaryCtrl.sessionMenus.length > 0" scholar-menus="DiaryCtrl.sessionMenus" item-selected-class="DiaryCtrl.SESSION_SELECTED" on-menu-selected="DiaryCtrl.onScholarSessionMenuSelected(id)"></scholar-menu>
 
-                <article uib-accordion-group>
-                    <header uib-accordion-heading>
-                        <h4>Schedules</h4>
-                    </header>
-                    <diary-session session="session" ng-repeat="session in DiaryCtrl.data.sessions"></diary-session>
-                    <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
-                    <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
-                </article>
+            <!--<scholar-level-menu scholar-levels="DiaryCtrl.scholarMenuData.scholarLevels"></scholar-level-menu>-->
+        </div>
+    </div>
+</article>
 
-                <article uib-accordion-group>
-                    <header uib-accordion-heading>
-                        <h4>Historical</h4>
-                    </header>
-                    <diary-session session="session" ng-repeat="session in DiaryCtrl.data.sessionsHistorical"></diary-session>
-                    <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
-                    <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
-                    <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
-                </article>
-            </uib-accordion>
+<article class="section-white">
+    <div class="container">
+        <div class="row">
+
+            <section ng-if="DiaryCtrl.isDiaryShowed" class="sessions-container">
+                <uib-accordion>
+                    <article uib-accordion-group is-open="true">
+                        <header uib-accordion-heading>
+                            <h4>Pendings</h4>
+                        </header>
+                        <section class="wainting-scholarship-holders-list">
+                            <diary-pending-list class="waiting-scholarship-holders-table"></diary-pending-list>
+
+                            <diary-schedule-form class="diary-form"></diary-schedule-form>
+                        </section>
+                    </article>
+
+                    <article uib-accordion-group>
+                        <header uib-accordion-heading>
+                            <h4>Schedules</h4>
+                        </header>
+                        <diary-session session="session" ng-repeat="session in DiaryCtrl.data.sessions"></diary-session>
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
+                    </article>
+
+                    <article uib-accordion-group>
+                        <header uib-accordion-heading>
+                            <h4>Historical</h4>
+                        </header>
+                        <diary-session session="session" ng-repeat="session in DiaryCtrl.data.sessionsHistorical"></diary-session>
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
+                    </article>
+                </uib-accordion>
+            </section>
         </div>
     </div>
 </article>

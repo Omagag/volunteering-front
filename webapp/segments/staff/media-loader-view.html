@@ -2,26 +2,21 @@
 <app-nav></app-nav>
 
 <article class="section-white">
+    <div class="container">
+        <div class="row">
+            <!--<scholar-level-menu scholar-levels="MLCtrl.data.scholarLevels"></scholar-level-menu>-->
+            <scholar-menu scholar-menus="MLCtrl.data.scholarLevels" on-menu-selected="MLCtrl.onScholarLevelMenuSelected(id)"></scholar-menu>
+            <scholar-menu ng-if="MLCtrl.gradeMenus.length > 0" scholar-menus="MLCtrl.gradeMenus" item-selected-class="MLCtrl.GRADE_SELECTED" on-menu-selected="MLCtrl.onScholarGradeMenuSelected(id)"></scholar-menu>
+            <scholar-menu ng-if="MLCtrl.sessionMenus.length > 0" scholar-menus="MLCtrl.sessionMenus" item-selected-class="MLCtrl.SESSION_SELECTED" on-menu-selected="MLCtrl.onScholarSessionMenuSelected(id)"></scholar-menu>
+        </div>
+    </div>
+</article>
 
-    <scholar-level-menu scholar-levels="CLCtrl.data.scholarLevels"></scholar-level-menu>
 
+<article class="section-white" ng-if="MLCtrl.isMediaCointeiner">
     <section class="container-fluid">
         <div class="container">
             <div class="row distribution-session-element">
-                <div class="session-menu-container">
-                    <ul class="menu-session-col-6">
-                        <li>Sesi&oacute;n Uno</li>
-                        <li>Sesi&oacute;n Dos</li>
-                        <li>Sesi&oacute;n Tres</li>
-                        <li>Sesi&oacute;n Cuatro</li>
-                        <li class="session-selected">Sesi&oacute;n Cinco</li>
-                        <li>Sesi&oacute;n Cinco</li>
-                        <li>Sesi&oacute;n Cinco</li>
-                        <li>Sesi&oacute;n Cinco</li>
-                        <li>Sesi&oacute;n n..</li>
-                    </ul>
-                </div>
-
                 <article class="upload-resources-container">
                     <upload-video class="upload-video-container"></upload-video>
 
@@ -30,16 +25,16 @@
                         <!-- Include Upload Resources Row -->
 
                         <section class="new-resources-buttons">
-                            <button type="button" class="button btn-blue" ng-click="CLCtrl.newResource(CLCtrl.URL_TYPE)">Nueva URL</button>
+                            <button type="button" class="button btn-blue" ng-click="MLCtrl.newResource(MLCtrl.URL_TYPE)">Nueva URL</button>
                             <div class="separator-h-20"></div>
-                            <button type="button" class="button btn-blue" ng-click="CLCtrl.newResource(CLCtrl.FILE_TYPE)">Nuevo Archivo</button>
+                            <button type="button" class="button btn-blue" ng-click="MLCtrl.newResource(MLCtrl.FILE_TYPE)">Nuevo Archivo</button>
                         </section>
 
-                        <!--<upload-resources-row available-options="CLCtrl.localData.availableOptions"></upload-resources-row>-->
-                        <!--<upload-resources-row available-options="CLCtrl.localData.availableOptions"></upload-resources-row>-->
-                        <upload-resources-row resource="resource" ng-repeat="resource in CLCtrl.resourcesList" on-remove="CLCtrl.removeResource(resource)"></upload-resources-row>
-                        <!--<upload-resources-row type="CLCtrl.FILE_TYPE"></upload-resources-row>-->
-                        <!--<upload-resources-row type="CLCtrl.URL_TYPE"></upload-resources-row>-->
+                        <!--<upload-resources-row available-options="MLCtrl.localData.availableOptions"></upload-resources-row>-->
+                        <!--<upload-resources-row available-options="MLCtrl.localData.availableOptions"></upload-resources-row>-->
+                        <upload-resources-row resource="resource" ng-repeat="resource in MLCtrl.resourcesList" on-remove="MLCtrl.removeResource(resource)"></upload-resources-row>
+                        <!--<upload-resources-row type="MLCtrl.FILE_TYPE"></upload-resources-row>-->
+                        <!--<upload-resources-row type="MLCtrl.URL_TYPE"></upload-resources-row>-->
                     </section>
 
                     <section class="new-resources-buttons">
