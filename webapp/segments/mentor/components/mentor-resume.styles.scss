@@ -1,0 +1,23 @@
+
+/*imagen perfil*/
+
+.container-profile {
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  margin-bottom: 25px;
+}
+.container-profile-img {
+  width: 7%;
+  display: inline-block;
+  margin-right: 20px;
+}
+.container-profile-img img {
+  width: 100%;
+}
+.container-profile-info {
+  width: 70%;
+  display: inline-block;
+}
+
+/* termina imagen perfil*/
