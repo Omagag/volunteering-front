@@ -2,7 +2,8 @@ import angular from "angular";
 
 class MediaLoaderController {
 
-    constructor(ScholarLevelService, MediaLoaderService){
+    constructor(ScholarLevelService, MediaLoaderService, userSession){
+        this.userSession = userSession;
         this._scholarLevelService = ScholarLevelService;
         this._mediaLoaderService = MediaLoaderService;
         this.data = this._scholarLevelService.data

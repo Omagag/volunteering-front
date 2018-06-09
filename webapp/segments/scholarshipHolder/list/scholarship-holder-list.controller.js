@@ -2,7 +2,8 @@ import angular from "angular";
 
 class ScholarshipHolderController {
     
-    constructor(ScholarshipHolderService){
+    constructor(ScholarshipHolderService, userSession){
+        this.userSession = userSession;
         this._scholarshipHolderService = ScholarshipHolderService;
         this.data = this._scholarshipHolderService.data;
         this.loadScholarshipHolders();

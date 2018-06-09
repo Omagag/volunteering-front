@@ -3,11 +3,11 @@ import angular from "angular";
 class DiaryController {
     
     constructor(DiaryService, ScholarLevelService, userSession){
+        this.userSession = userSession;
         this._diaryService = DiaryService;
         this.data = this._diaryService.data;
         this._scholarLevelService = ScholarLevelService;
         this.scholarMenuData = this._scholarLevelService.data;
-        this.userSession = userSession;
 
         // Init
         this._diaryService.loadSessions();

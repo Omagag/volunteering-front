@@ -27,6 +27,7 @@ import mediaLoaderRoute from "./segments/staff/media-loader.routes";
 
 import "./segments/layout/header.component";
 import "./segments/layout/nav.component";
+import "./segments/mentor/components/mentor-resume.component";
 import "./segments/layout/footer.component";
 
 let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
