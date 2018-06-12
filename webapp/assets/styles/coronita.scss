@@ -3291,7 +3291,8 @@ fieldset[disabled] a.btn {
 
 .btn-default {
   color: #121212;
-  background-color: #fff;
+  //background-color: #fff;
+  background-color: #ccc;
   border-color: #ccc; }
 .btn-default:focus, .btn-default.focus {
   color: #121212;
@@ -6573,14 +6574,25 @@ button.close {
   text-align: center;
   width: auto;
   transition: ease all 300ms; }
-.button:hover {
-  color: #237ABA;
-  background-color: #D4EDFC; }
+//.button:hover {
+//  color: #237ABA;
+//  background-color: #D4EDFC; }
 .button:focus {
   color: #FFFFFF; }
 
 .btn-blue {
-  background: #237ABA; }
+  background: #237ABA;
+}
+.btn-blue:hover {
+  color: #237ABA;
+  background-color: #D4EDFC;
+}
+.btn-default {
+  background: #aaa;
+}
+.btn-default:hover {
+  background: #ccc;
+}
 
 .validField label, .validField select, .validField .errorCont {
   color: #288e07 !important; }

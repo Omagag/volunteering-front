@@ -1,0 +1,69 @@
+/* Spinner */
+//#content-dialog {
+.content-dialog {
+  width: 100%;
+  min-height: 100%;
+  background-color: #ffffff;
+  filter:alpha(opacity=90); /* IE */
+  -moz-opacity:0.9; /* Mozilla */
+  opacity: 0.9; /* CSS3 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.dialog {
+  border: 2px solid #072146;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  width: 400px;
+  height: 280px;
+  //height: 230px;
+  background: #ffffff;
+  text-align: center;
+  //display: grid;
+  display: block;
+  position: absolute;
+  margin: auto;
+  padding: 20px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.dialog-small {
+  height: 230px;
+}
+.dialog-normal {
+  height: 280px;
+}
+.dialog-large {
+  height: 320px;
+}
+.messages-container {
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  height: 60px;
+}
+.dialog h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.dialog p {
+  font-size: 15px;
+}
+.dialog-buttons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 80px;
+}
+.hide-dialog {
+  display: none;
+}
+.show-dialog {
+  display: block;
+}

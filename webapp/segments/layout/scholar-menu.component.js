@@ -58,7 +58,7 @@ class ScholarMenuController {
             this.scholarMenus.forEach((scholarMenu)=> {
                 // let scholarMenu = this.scholarMenus[i];
                 if (scholarMenu.id === id) {
-                    scholarMenu.class = this.colClass + " " + (this.itemSelectedClass !== undefined ? this.itemSelectedClass : this.MENU_SELECTED);
+                    scholarMenu.class = this.colClass + " " + (angular.isDefined(this.itemSelectedClass) ? this.itemSelectedClass : this.MENU_SELECTED);
                     this.onMenuSelected({id:id});
                 } else {
                     scholarMenu.class = this.colClass;
