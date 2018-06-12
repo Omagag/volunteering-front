@@ -21,6 +21,11 @@ class MediaLoaderController {
         this.FILE_TYPE = "FILE";
         this.URL_TYPE = "URL";
 
+        // TODO: Testing dialog
+        // Dialog info
+        this.dialog = {};
+        this.showDialog = false;
+
 
         // TODO: Resources List
         this.resourcesList = [
@@ -34,9 +39,14 @@ class MediaLoaderController {
             }
         ];
     }
-
     loadMenu() {
         this._scholarLevelService.getScholarLevels();
+    }
+    onConfirmDialog() {
+        this.showDialog = false;
+    }
+    onCancelDialog() {
+        this.showDialog = false;
     }
     onScholarLevelMenuSelected(id) {
         this.gradeMenus = [];
@@ -75,6 +85,17 @@ class MediaLoaderController {
     removeResource(resource) {
         let index = this.resourcesList.indexOf(resource);
         this.resourcesList.splice(index, 1);
+    }
+
+    onSaveResources() {
+        this.showDialog = true;
+        this.dialog = {
+            title: "Felicidades",
+            messageOne: "Se han guardado todos los recursos.",
+            // messageTwo: "Se han guardado tos los recursos asdfasd fdas fadsf ads fasf asfsa fasdf a.",
+            // buttonConfirmLabel: "Confirmar",
+            buttonCancelLabel: "Cerrar"
+        }
     }
 
 }

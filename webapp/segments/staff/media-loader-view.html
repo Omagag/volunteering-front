@@ -33,15 +33,15 @@
 </article>
 
 
-<article class="section-white" ng-if="MLCtrl.isMediaCointeiner">
+<article class="section-white">
     <section class="container-fluid">
         <div class="container">
             <div class="row distribution-session-element">
-                <article class="upload-resources-container">
+                <article class="upload-resources-container" ng-if="MLCtrl.isMediaCointeiner">
                     <upload-video class="upload-video-container"></upload-video>
 
                     <section>
-                        <h3>Load Resources</h3>
+                        <!--<h3>Load Resources</h3>-->
                         <!-- Include Upload Resources Row -->
 
                         <section class="new-resources-buttons">
@@ -58,14 +58,20 @@
                     </section>
 
                     <section class="new-resources-buttons">
-                        <button type="button" class="button btn-blue">Guardar</button>
+                        <button type="button" class="button btn-blue" ng-click="MLCtrl.onSaveResources()">Guardar</button>
                     </section>
 
                 </article>
+
             </div>
+
+            <empty-message ng-if="!MLCtrl.isMediaCointeiner" message="Seleccionar nivel, grado Escolar y número de sessión a revisar, de favor."></empty-message>
+
         </div>
     </section>
 
 </article>
+
+<dt-dialog dialog-data="MLCtrl.dialog" on-confirm="MLCtrl.onConfirmDialog()" on-cancel="MLCtrl.onCancelDialog()" ng-if="MLCtrl.showDialog"></dt-dialog>
 
 <app-footer></app-footer>

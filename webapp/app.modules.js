@@ -6,6 +6,8 @@ import "angular-translate";
 import "angular-route-segment";
 import ngCookies from "angular-cookies";
 import "angular-translate-loader-static-files";
+import angularAnimate from "angular-animate";
+import angularTouch from "angular-touch";
 
 // import popper from "popper.js";
 // import bootstrap from "bootstrap/dist/css/bootstrap.css";
@@ -31,6 +33,8 @@ angular.module("webapp", [
 	accordion,
 	datepicker,
 	dateparser,
-	rating
+	rating,
+	angularAnimate,
+	angularTouch
 	// uiBootstrap
 ]);

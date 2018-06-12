@@ -1,18 +1,18 @@
 <section class="section-white">
     <h3 class="bbva-medium-blue border-after-name-section">{{$ctrl.scholarshipHolder.name}}</h3>
     <div class="container-data-card">
-        <div class="profile-picture">
+        <div class="item-container-data-card">
             <img src="../../../assets/img/foto_perfil.png">
         </div>
 
         <!--<div class="data-card">-->
-        <div>
+        <div class="item-container-data-card">
             <p>{{$ctrl.scholarshipHolder.campus}}</p>
             <p>{{$ctrl.scholarshipHolder.school}}</p>
             <p>{{$ctrl.scholarshipHolder.grade}}</p>
             <p>{{$ctrl.scholarshipHolder.average}}</p>
         </div>
-        <div>
+        <div class="item-container-data-card">
             <p>Cel: <span>#### ####</span></p>
             <p>Tel de casa: <span>#### ####</span></p>
             <p>berenice.fuentes@gmail.com</p>
@@ -30,14 +30,14 @@
     <!--<section class="">-->
     <h4 class="border-after-name-section">Mis intereses</h4>
     <div class="container-data-card">
-        <div>
+        <div class="item-container-data-card">
             <ul>
                 <li class="list-interests">Coffee</li>
                 <li class="list-interests">Tea</li>
                 <li class="list-interests">Milk</li>
             </ul>
         </div>
-        <div>
+        <div class="item-container-data-card">
             <ul>
                 <li class="list-interests">Coffee</li>
                 <li class="list-interests">Tea</li>
@@ -51,7 +51,7 @@
     <!--<section class="">-->
     <h4 class="border-after-name-section">Mis Sesiones</h4>
     <div class="sessions-wrapper">
-        <scholarship-holder-session-card session="session" ng-repeat="session in $ctrl.scholarshipHolder.sessions"></scholarship-holder-session-card>
+        <scholarship-holder-session-card class="container-componet-session" session="session" ng-repeat="session in $ctrl.scholarshipHolder.sessions"></scholarship-holder-session-card>
         <!--<div class="container-session">-->
             <!--<h5>Sesi&oacute;n Uno</h5>-->
             <!--<div class="rectangle-done">-->

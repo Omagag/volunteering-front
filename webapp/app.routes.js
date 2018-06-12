@@ -29,6 +29,8 @@ import "./segments/layout/header.component";
 import "./segments/layout/nav.component";
 import "./segments/mentor/components/mentor-resume.component";
 import "./segments/layout/footer.component";
+import "./segments/layout/empty-message.component";
+import "./segments/layout/dialog.component";
 
 let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
 

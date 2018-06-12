@@ -1,0 +1,15 @@
+<div id="dialog" class="dialog" ng-class="$ctrl.dialogHeightClass">
+    <h3 ng-if="$ctrl.dialogData.hasOwnProperty('title')">{{$ctrl.dialogData.title}}</h3>
+    <div class="messages-container" ng-if="$ctrl.dialogData.hasOwnProperty('messageOne')">
+        <p ng-if="$ctrl.dialogData.hasOwnProperty('messageOne')">{{$ctrl.dialogData.messageOne}}</p>
+    </div>
+    <div class="messages-container" ng-if="$ctrl.dialogData.hasOwnProperty('messageTwo')">
+        <p ng-if="$ctrl.dialogData.hasOwnProperty('messageTwo')">{{$ctrl.dialogData.messageTwo}}</p>
+    </div>
+    <div class="dialog-buttons">
+        <button type="button" class="button btn-blue" ng-click="$ctrl.onConfirm()" ng-if="$ctrl.dialogData.hasOwnProperty('buttonConfirmLabel')">{{$ctrl.dialogData.buttonConfirmLabel}}</button>
+        <div class="separator-h-20" ng-if="$ctrl.dialogData.hasOwnProperty('buttonCancelLabel') && $ctrl.dialogData.hasOwnProperty('buttonConfirmLabel')"></div>
+        <button type="button" class="button btn-default" ng-click="$ctrl.onCancel()" ng-if="$ctrl.dialogData.hasOwnProperty('buttonCancelLabel')">{{$ctrl.dialogData.buttonCancelLabel}}</button>
+    </div>
+</div>
+<div id="" class="content-dialog show-dialog"></div>

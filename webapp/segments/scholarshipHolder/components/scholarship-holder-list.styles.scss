@@ -126,19 +126,24 @@ th {
 }
 
 .color-description{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   margin-top: 5px;
+
+
 }
 .nomenclature-container {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
 }
 .nomenclature-container-svg {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  grid-template-columns: 1fr 1fr;
 }
 .nomenclature-container-name {
   display: flex;
@@ -146,6 +151,7 @@ th {
   margin: 0;
   color: #ababab;
   font-size: 12px;
+  margin-left: 5%;
 }
 
 @media (max-width: 767px) {
