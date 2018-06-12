@@ -122,7 +122,23 @@ class DiaryService {
             }
         ];
     }
+
+    get(id) {
+        this.preloadedData.forEach((scholarshipHolder) => {
+            if (scholarshipHolder.id === id) {
+                this.data.scholarshipHolder = scholarshipHolder;
+            }
+        });
+    }
+
+
+    loadList() {
+        this.data.scholarshipHolders = this.preloadedData;
+    }
 }
+
+
+
 
 angular.module("webapp")
     .service("DiaryService", DiaryService);

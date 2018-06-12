@@ -2,49 +2,61 @@
 
     <section class="col-lg-2 col-md-2 col-sm-3 col-xs-3" >
 
-        <a><p>{{$ctrl.scholarshipHolder.name}}</p></a>
+        <a href="/scholarship-holder/{{$ctrl.scholarshipHolder.id}}/card">
+
+        <p>{{$ctrl.scholarshipHolder.name}}</p>
+        </a>
+
+
+
     </section>
 
-    <section class="scholarship-holder-row-attended">
+    <section class="scholarship-holder-row-attended" ng-if="$ctrl.isAttendConfirmation">
+
         <p class="col-lg-3 col-md-3 col-sm-4 col-xs-4">¿Asistió?</p>
 
         <div class="col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
-            <input type="radio" name="secundaria" value="gusta">
+            <!--<input type="radio" ng-model="$ctrl.isAttended" value="Si" name="secundaria" >-->
+            <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="Si" name="secundaria" >
             <label>Si</label>
         </div>
         <div class="col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
-            <input type="radio" name="secundaria" value="gusta">
+            <!--<input type="radio" ng-model="$ctrl.isAttended" value="No" name="secundaria">-->
+            <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="No" name="secundaria">
             <label>No</label>
         </div>
-    </section>
 
-    <section class="scholarship-holder-row-attended">
-        <!--<p class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Evalua</p>-->
-
-        <div class="">
-
-        <span uib-rating ng-model="rate" max="5" read-only="isReadonly" on-hover="hoveringOver(value)"
-              on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating" class="rating-star"></span>
+        <div>
+            <button type="button" class="button btn-blue" ng-click="$ctrl.onConfirmAttend()">Guardar</button>
         </div>
+
+        <p>{{$ctrl.scholarshipHolder.mensaje}}</p>
     </section>
 
+    <article ng-if="$ctrl.isAttendEvalua">
 
-    <!--<p class="subtitulos">Evelua</p>-->
+        <section class="scholarship-holder-row-attended col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
+            <!--<p class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Evalua</p>-->
+            <div >
+            <span uib-rating ng-model="rate" max="5" read-only="isReadonly" on-hover="hoveringOver(value)"
+                  on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating" class="rating-star"></span>
+            </div>
 
-    <!--<div class="checkbox col-lg-1 col-md-1 col-sm-2 col-xs-2 fl_wrap">-->
-        <!--<input type="checkbox" name="secundaria" value="gusta">-->
-        <!--<label>Si</label>-->
-    <!--</div>-->
-    <!--<div class="checkbox col-lg-1 col-md-1 col-sm-2 col-xs-2fl_wrap">-->
-        <!--<input type="checkbox" name="secundaria" value="gusta">-->
-        <!--<label>No</label>-->
-    <!--</div>-->
+            <div class="form-field text-field col-lg-4 col-md-4 col-sm-4 col-xs-4 fl_wrap">
+                <textarea class="fl_input"></textarea>
+                <label class="fl_label">Comentario</label>
+
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <button type="button" class="button btn-blue" ng-click="">Guardar</button>
+            </div>
+        </section>
 
 
 
-    <div class="form-field text-field col-lg-4 col-md-4 col-sm-4 col-xs-4 fl_wrap">
-        <textarea class="fl_input"></textarea>
-        <label class="fl_label">Comentario</label>
-    </div>
+
+    </article>
+
 
 </div>
