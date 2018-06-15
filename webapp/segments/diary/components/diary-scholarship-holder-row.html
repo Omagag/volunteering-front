@@ -1,60 +1,52 @@
 <div class="scholarship-holder-row-container">
 
-    <section class="col-lg-2 col-md-2 col-sm-3 col-xs-3" >
-
+    <article class="col-lg-3 col-md-2 col-sm-3 col-xs-3">
         <a href="/scholarship-holder/{{$ctrl.scholarshipHolder.id}}/card">
-
-        <p>{{$ctrl.scholarshipHolder.name}}</p>
+            <p class="scholarship-holder-row-name">{{$ctrl.scholarshipHolder.name}}</p>
         </a>
+    </article>
 
+    <article class="col-lg-9 col-md-2 col-sm-3 col-xs-3 container-form">
 
+        <section class="scholarship-holder-row-attended" ng-if="$ctrl.isAttendConfirmation">
 
-    </section>
+            <p class="col-lg-3 col-md-3 col-sm-4 col-xs-4">¿Asistió?</p>
 
-    <section class="scholarship-holder-row-attended" ng-if="$ctrl.isAttendConfirmation">
+            <div class="col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
+                <!--<input type="radio" ng-model="$ctrl.isAttended" value="Si" name="secundaria" >-->
+                <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="Si" name="secundaria" >
+                <label>Si</label>
+            </div>
+            <div class="col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
+                <!--<input type="radio" ng-model="$ctrl.isAttended" value="No" name="secundaria">-->
+                <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="No" name="secundaria">
+                <label>No</label>
+            </div>
 
-        <p class="col-lg-3 col-md-3 col-sm-4 col-xs-4">¿Asistió?</p>
+            <div>
+                <button type="button" class="button btn-blue btn-small" ng-click="$ctrl.onConfirmAttend()">Guardar</button>
+            </div>
 
-        <div class="col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
-            <!--<input type="radio" ng-model="$ctrl.isAttended" value="Si" name="secundaria" >-->
-            <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="Si" name="secundaria" >
-            <label>Si</label>
-        </div>
-        <div class="col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
-            <!--<input type="radio" ng-model="$ctrl.isAttended" value="No" name="secundaria">-->
-            <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="No" name="secundaria">
-            <label>No</label>
-        </div>
+            <p>{{$ctrl.scholarshipHolder.mensaje}}</p>
+        </section>
 
-        <div>
-            <button type="button" class="button btn-blue" ng-click="$ctrl.onConfirmAttend()">Guardar</button>
-        </div>
-
-        <p>{{$ctrl.scholarshipHolder.mensaje}}</p>
-    </section>
-
-    <article ng-if="$ctrl.isAttendEvalua">
-
-        <section class="scholarship-holder-row-attended col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
+        <section class="scholarship-holder-row-evaluated" ng-if="$ctrl.isAttendEvalua">
             <!--<p class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Evalua</p>-->
-            <div >
+            <div class="col-lg-4 col-md-2 col-sm-3 col-xs-3 fl_wrap">
             <span uib-rating ng-model="rate" max="5" read-only="isReadonly" on-hover="hoveringOver(value)"
                   on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating" class="rating-star"></span>
             </div>
 
-            <div class="form-field text-field col-lg-4 col-md-4 col-sm-4 col-xs-4 fl_wrap">
-                <textarea class="fl_input"></textarea>
-                <label class="fl_label">Comentario</label>
+            <div class="form-field text-field col-lg-8 col-md-4 col-sm-4 col-xs-4 fl_wrap">
+                <textarea class="fl_input btn-small2" placeholder="Comentario"></textarea>
+                <!--<label class="fl_label">Comentario</label>-->
 
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <button type="button" class="button btn-blue" ng-click="">Guardar</button>
+                <button type="button" class="button btn-blue btn-small" ng-click="">Guardar</button>
             </div>
         </section>
-
-
-
 
     </article>
 

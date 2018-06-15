@@ -93,7 +93,7 @@ class ScholarLevelService {
             },
             {
                 id: 3,
-                name: "Licenciatura",
+                name: "Universidad",
                 scholarGrades: [
                     {
                         id: 6,

@@ -11,23 +11,31 @@
   color: #ffffff;
 }
 .session-scheduled {
-  background: #1973B8;
+  background: #BDBDBD;
 }
 .session-pending-to-evaluate {
-  background: #C49735;
+  background: #072146;
 }
 .session-canceled {
   background: #c0475e;
 }
 .session-scheduled-again {
-  background: #88CA9A;
+  background: #48AE64;
 }
 .session-evaluated {
-  background: #D4EDFC;
+  background: #48AE64;
 }
 .session-header p {
   margin: 0;
 }
 .session-scholarship-holders {
   border: 1px solid #1973B8;
+}
+
+.btn-small {
+  line-height: 5px;
+}
+
+.btn-small2{
+width: 15px;
 }
