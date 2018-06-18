@@ -7,8 +7,42 @@
     margin: 0;
 }
 .scholarship-holder-row-attended {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     padding: 0 10px;
-    width: 100%;
+    width: 80%;
 }
+
+
+.scholarship-holder-row-evaluated{
+    display: inline-flex;
+    width: 80%;
+    align-items: center;
+    padding: 0 10px;
+
+}
+.scholarship-holder-row-container .form-field.text-field textarea {
+    background: #ffffff;
+    min-height: 10px;
+    padding: 5px 10px 5px 10px;
+   //padding: 0px;
+    //width: 35%;
+    resize: none;
+
+}
+
+.container-form{
+    text-align: center;
+
+}
+
+.scholarship-holder-row-name  {
+    font-size: 13px;
+    color: #49A5E6;
+    cursor: pointer;
+
+}
+.scholarship-holder-row-name:hover  {
+    color: #5BBEFF;
+}
+
