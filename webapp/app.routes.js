@@ -23,12 +23,16 @@ import mentorRoute from "./segments/mentor/mentor.routes";
 import scholarshipHolderRoute from "./segments/scholarshipHolder/list/scholarship-holder-list.routes";
 import scholarshipHolderCardRoute from "./segments/scholarshipHolder/card/scholarship-holder-card.routes";
 import diaryRoute from "./segments/diary/diary.routes";
-import mediaLoaderRoute from "./segments/staff/media-loader.routes";
+import mediaLoaderRoute from "./segments/staff/media-loader/media-loader.routes";
+import mediaViewerRoute from "./segments/staff/media-viewer/media-viewer.routes";
 
+// Components
 import "./segments/layout/header.component";
 import "./segments/layout/nav.component";
 import "./segments/mentor/components/mentor-resume.component";
 import "./segments/layout/footer.component";
+import "./segments/layout/scholar-menu.component";
+import "./segments/layout/evaluate.component";
 import "./segments/layout/empty-message.component";
 import "./segments/layout/dialog.component";
 
@@ -40,7 +44,8 @@ let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
         .segment("scholarshipHolder", scholarshipHolderRoute)
         .segment("scholarshipHolderCard", scholarshipHolderCardRoute)
         .segment("diary", diaryRoute)
-        .segment("mediaLoader" , mediaLoaderRoute);
+        .segment("mediaLoader" , mediaLoaderRoute)
+        .segment("mediaViewer" , mediaViewerRoute);
 
     $routeSegmentProvider
 		.when( "/", "home" )
@@ -48,7 +53,9 @@ let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
         .when("/scholarship-holder/", "scholarshipHolder")
         .when("/scholarship-holder/:id/card", "scholarshipHolderCard")
         .when("/diary", "diary")
-        .when("/staff/media-loader", "mediaLoader");
+        .when("/staff/media/loader", "mediaLoader")
+        .when("/staff/media/viewer", "mediaViewer");
+        // .when("/staff/media/:id/viewer", "mediaViewer");
 
     // configure html5 to get links working on jsfiddle
 	$locationProvider.html5Mode( true );

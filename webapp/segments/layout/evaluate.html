@@ -1,0 +1,12 @@
+<form>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <span uib-rating ng-model="$ctrl.evaluation.stars" max="5" read-only="isReadonly" on-hover="hoveringOver(value)"
+              on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating"
+              class="rating-star"></span>
+    </div>
+    <div class="form-field text-field col-lg-4 col-md-4 col-sm-4 col-xs-4 fl_wrap">
+        <textarea class="fl_input">{{$ctrl.evaluation.comment}}</textarea>
+        <label class="fl_label">Comentario</label>
+    </div>
+    <button type="button" class="button btn-evaluate">Evaluar</button>
+</form>

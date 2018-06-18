@@ -1,6 +1,6 @@
 import angular from "angular";
 
-class MediaLoaderService {
+class MediaService {
 
     constructor() {
         this.data = {};
@@ -20,4 +20,4 @@ class MediaLoaderService {
 }
 
 angular.module("webapp")
-    .service("MediaLoaderService", MediaLoaderService);
+    .service("MediaService", MediaService);

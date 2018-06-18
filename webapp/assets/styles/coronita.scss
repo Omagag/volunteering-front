@@ -3291,8 +3291,7 @@ fieldset[disabled] a.btn {
 
 .btn-default {
   color: #121212;
-  //background-color: #fff;
-  background-color: #ccc;
+  background-color: #fff;
   border-color: #ccc; }
 .btn-default:focus, .btn-default.focus {
   color: #121212;
@@ -6587,10 +6586,10 @@ button.close {
   color: #237ABA;
   background-color: #D4EDFC;
 }
-.btn-default {
+.btn-close {
   background: #aaa;
 }
-.btn-default:hover {
+.btn-close:hover {
   background: #ccc;
 }
 

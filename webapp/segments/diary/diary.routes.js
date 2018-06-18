@@ -8,8 +8,6 @@ import "./components/diary-schedule-form.component"
 import "./components/diary-scholarship-holder-row.componet"
 import "./components/diary-session.component"
 
-import "../layout/scholar-menu.component";
-
 let diaryRoute = {
     templateUrl : template,
     controller : "DiaryController",

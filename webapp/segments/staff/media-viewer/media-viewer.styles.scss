@@ -1,0 +1,33 @@
+.distribution-session-element{
+  display: flex;
+}
+.session-menu-container {
+  width: 30%;
+  display: inline-block;
+}
+
+.viewer-resources-container {
+  width:100%;
+  display: inline-block;
+  text-align: center;
+}
+.viewer-resources-container h3 {
+  padding-bottom: 10px;
+  border-bottom: solid 1px #1464A5;
+}
+.viewer-resources-video {
+  width: 60%;
+  display: inline-block;
+}
+.viewer-resources-video video {
+  width: 100%;
+}
+.btn-evaluate {
+  background: #f7893b;
+}
+.btn-evaluate:hover {
+  color: #237ABA;
+  background-color: #fab27f;
+}
+
+

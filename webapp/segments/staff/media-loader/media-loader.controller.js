@@ -2,12 +2,13 @@ import angular from "angular";
 
 class MediaLoaderController {
 
-    constructor(ScholarLevelService, MediaLoaderService, userSession){
+    constructor(ScholarLevelService, MediaService, userSession, $location){
         this.userSession = userSession;
         this._scholarLevelService = ScholarLevelService;
-        this._mediaLoaderService = MediaLoaderService;
-        this.data = this._scholarLevelService.data
-        this.localData = this._mediaLoaderService.data;
+        this._mediaService = MediaService;
+        this._$location = $location;
+        this.data = this._scholarLevelService.data;
+        this.localData = this._mediaService.data;
 
         this.isMediaCointeiner = false;
 
@@ -17,7 +18,7 @@ class MediaLoaderController {
         this.sessionMenus = [];
         this.SESSION_SELECTED = "item-session-selected";
 
-        this._mediaLoaderService.getAvailableOptions();
+        this._mediaService.getAvailableOptions();
         this.FILE_TYPE = "FILE";
         this.URL_TYPE = "URL";
 
@@ -97,10 +98,12 @@ class MediaLoaderController {
             buttonCancelLabel: "Cerrar"
         }
     }
-
+    onPreview() {
+        this._$location.path("/staff/media/viewer");
+    }
 }
 
-MediaLoaderController.$inject = ["ScholarLevelService", "MediaLoaderService", "userSession"];
+MediaLoaderController.$inject = ["ScholarLevelService", "MediaService", "userSession", "$location"];
 
 angular.module("webapp")
        .controller("MediaLoaderController", MediaLoaderController);

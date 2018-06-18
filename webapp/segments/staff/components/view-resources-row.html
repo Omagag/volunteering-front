@@ -1,0 +1,16 @@
+<section class="media-view-resource-row-container margin-elements">
+    <div class="file-name-container">
+        <p>{{$ctrl.resource.name}}</p>
+    </div>
+
+    <div class="file-type-img-container">
+        <!--<a href="{{$ctrl.resource.value}}" target="_blank"><img ng-src="{{$ctrl.resource.type == 'URL' ? ../../../assets/img/link_icon.png : '}}"></a>-->
+        <a href="{{$ctrl.resource.value}}" target="_blank"><img ng-src="{{$ctrl.chooseIconFile($ctrl.resource.value)}}"></a>
+    </div>
+
+    <!--<div ng-if="$ctrl.resource.type == 'URL'">-->
+    <!--</div>-->
+    <!--<div ng-if="$ctrl.resource.type == 'FILE'">-->
+    <!--</div>-->
+
+</section>

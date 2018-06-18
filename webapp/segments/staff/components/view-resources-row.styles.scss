@@ -1,0 +1,24 @@
+.margin-elements{
+  //margin-bottom: 10px;
+}
+.media-view-resource-row-container {
+  display: inline-flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+.file-name-container {
+  width: 40%;
+  text-align: left;
+}
+.file-name-container p {
+  //width: 30%;
+  margin: 0 20px 0 0;
+}
+.file-type-img-container {
+  width: 10%;
+}
+.file-type-img-container img {
+  width: 100%;
+}
