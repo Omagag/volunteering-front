@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row">
             <!--aqui debería invocar el nuevo menu -->
-            <session-menu level-menus="DiaryCtrl.scholarMenuData.scholarLevels" ></session-menu>
+            <session-menu level-menus="DiaryCtrl.scholarMenuData.scholarLevels" on-level-menu-selected="DiaryCtrl.onLevelOrGradeMenuSelected()" on-grade-menu-selected="DiaryCtrl.onLevelOrGradeMenuSelected()" on-session-menu-selected="DiaryCtrl.onSessionMenuSelected(id)"></session-menu>
             <!--<scholar-menu scholar-menus="DiaryCtrl.scholarMenuData.scholarLevels" on-menu-selected="DiaryCtrl.onScholarLevelMenuSelected(id)"></scholar-menu>-->
             <!--<scholar-menu ng-if="DiaryCtrl.gradeMenus.length > 0" scholar-menus="DiaryCtrl.gradeMenus" item-selected-class="DiaryCtrl.GRADE_SELECTED" on-menu-selected="DiaryCtrl.onScholarGradeMenuSelected(id)"></scholar-menu>-->
             <!--<scholar-menu ng-if="DiaryCtrl.sessionMenus.length > 0" scholar-menus="DiaryCtrl.sessionMenus" item-selected-class="DiaryCtrl.SESSION_SELECTED" on-menu-selected="DiaryCtrl.onScholarSessionMenuSelected(id)"></scholar-menu>-->

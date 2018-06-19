@@ -35,6 +35,9 @@ class SessionMenuController {
             this._scholarLevelService.getScholarGrades(id);
             this.gradeMenus = this.data.scholarGrades;
 
+            // Invokes the function injected when the option is selected.
+            this.onLevelMenuSelected();
+
             // TODO: If we need a default GradeMenu selected, we initialize the this.gradeIdByDefault
             this.gradeMenus.forEach((gradeMenu, index)=>{
                 if (index === 0) {
@@ -48,11 +51,16 @@ class SessionMenuController {
         if (id != null) {
             this._scholarLevelService.getSessiosBy(id);
             this.sessionMenus = this.data.scholarSessions;
+
+            // Invokes the function injected when the option is selected.
+            this.onGradeMenuSelected();
         }
     }
     onScholarSessionMenuSelected(id) {
         // this.isDiaryShowed = true;
         // TODO: Ejecutar función genérica
+        // Invokes the function injected when the option is selected.
+        this.onSessionMenuSelected({id:id});
     }
 }
 
@@ -66,7 +74,10 @@ angular.module("webapp")
         controller: SessionMenuController,
         templateUrl: template,
         bindings: {
-            levelMenus: "<"
+            levelMenus: "<",
+            onLevelMenuSelected: "&",
+            onGradeMenuSelected: "&",
+            onSessionMenuSelected: "&"
         }
 
     });

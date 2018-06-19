@@ -49,35 +49,40 @@ class MediaLoaderController {
     onCancelDialog() {
         this.showDialog = false;
     }
-    onScholarLevelMenuSelected(id) {
-        this.gradeMenus = [];
-        this.sessionMenus = [];
+    // onScholarLevelMenuSelected(id) {
+    //     this.gradeMenus = [];
+    //     this.sessionMenus = [];
+    //     this.isMediaCointeiner = false;
+    //
+    //     if (id != null) {
+    //         this.data.scholarLevels.forEach((scholarLevel)=>{
+    //             if (scholarLevel.id === id) {
+    //                 this.gradeMenus = scholarLevel.scholarGrades;
+    //             }
+    //         });
+    //     }
+    // }
+    // onScholarGradeMenuSelected(id) {
+    //     this.sessionMenus = [];
+    //     this.isMediaCointeiner = false;
+    //
+    //     if (id != null) {
+    //         this.gradeMenus.forEach((scholarGrade)=>{
+    //             if (scholarGrade.id === id) {
+    //                 this.sessionMenus = scholarGrade.scholarSessions;
+    //             }
+    //         });
+    //     }
+    // }
+    // onScholarSessionMenuSelected(id) {
+    //     this.isMediaCointeiner = true;
+    // }
+    onLevelOrGradeMenuSelected() {
         this.isMediaCointeiner = false;
-
-        if (id != null) {
-            this.data.scholarLevels.forEach((scholarLevel)=>{
-                if (scholarLevel.id === id) {
-                    this.gradeMenus = scholarLevel.scholarGrades;
-                }
-            });
-        }
     }
-    onScholarGradeMenuSelected(id) {
-        this.sessionMenus = [];
-        this.isMediaCointeiner = false;
-
-        if (id != null) {
-            this.gradeMenus.forEach((scholarGrade)=>{
-                if (scholarGrade.id === id) {
-                    this.sessionMenus = scholarGrade.scholarSessions;
-                }
-            });
-        }
-    }
-    onScholarSessionMenuSelected(id) {
+    onSessionMenuSelected(id) {
         this.isMediaCointeiner = true;
     }
-
     newResource(type) {
         this.resourcesList.push({
             type: type

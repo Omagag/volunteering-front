@@ -24,10 +24,11 @@
 <article class="section-white">
     <div class="container">
         <div class="row">
+            <session-menu level-menus="MLCtrl.data.scholarLevels" on-level-menu-selected="MLCtrl.onLevelOrGradeMenuSelected()" on-grade-menu-selected="MLCtrl.onLevelOrGradeMenuSelected()" on-session-menu-selected="MLCtrl.onSessionMenuSelected(id)"></session-menu>
             <!--<scholar-level-menu scholar-levels="MLCtrl.data.scholarLevels"></scholar-level-menu>-->
-            <scholar-menu scholar-menus="MLCtrl.data.scholarLevels" on-menu-selected="MLCtrl.onScholarLevelMenuSelected(id)"></scholar-menu>
-            <scholar-menu ng-if="MLCtrl.gradeMenus.length > 0" scholar-menus="MLCtrl.gradeMenus" item-selected-class="MLCtrl.GRADE_SELECTED" on-menu-selected="MLCtrl.onScholarGradeMenuSelected(id)"></scholar-menu>
-            <scholar-menu ng-if="MLCtrl.sessionMenus.length > 0" scholar-menus="MLCtrl.sessionMenus" item-selected-class="MLCtrl.SESSION_SELECTED" on-menu-selected="MLCtrl.onScholarSessionMenuSelected(id)"></scholar-menu>
+            <!--<scholar-menu scholar-menus="MLCtrl.data.scholarLevels" on-menu-selected="MLCtrl.onScholarLevelMenuSelected(id)"></scholar-menu>-->
+            <!--<scholar-menu ng-if="MLCtrl.gradeMenus.length > 0" scholar-menus="MLCtrl.gradeMenus" item-selected-class="MLCtrl.GRADE_SELECTED" on-menu-selected="MLCtrl.onScholarGradeMenuSelected(id)"></scholar-menu>-->
+            <!--<scholar-menu ng-if="MLCtrl.sessionMenus.length > 0" scholar-menus="MLCtrl.sessionMenus" item-selected-class="MLCtrl.SESSION_SELECTED" on-menu-selected="MLCtrl.onScholarSessionMenuSelected(id)"></scholar-menu>-->
         </div>
     </div>
 </article>

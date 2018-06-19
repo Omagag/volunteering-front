@@ -13,6 +13,13 @@ class DiaryController {
         this._diaryService.loadSessions();
         this._scholarLevelService.getScholarLevels();
 
+        this.isDiaryShowed = false;
+    }
+    onLevelOrGradeMenuSelected() {
+        this.isDiaryShowed = false;
+    }
+    onSessionMenuSelected(id) {
+        this.isDiaryShowed = true;
     }
 }
 
