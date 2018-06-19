@@ -1,5 +1,10 @@
 .session-container {
-  margin: 100px 0;
+  //margin: 100px 0;
+}
+.session-container p,
+.session-container input[type=radio],
+.session-container label {
+  margin: 0;
 }
 .session-header {
   height: 50px;
@@ -9,6 +14,13 @@
   width: 100%;
   //background: #1973B8;
   color: #ffffff;
+  padding: 0 10px;
+  font-size: 13px;
+}
+.diary-session-attended {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
 }
 .session-scheduled {
   background: #BDBDBD;

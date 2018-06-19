@@ -1,12 +1,12 @@
 <div class="scholarship-holder-row-container">
 
-    <article class="col-lg-3 col-md-2 col-sm-3 col-xs-3">
+    <article class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
         <a href="/scholarship-holder/{{$ctrl.scholarshipHolder.id}}/card">
             <p class="scholarship-holder-row-name">{{$ctrl.scholarshipHolder.name}}</p>
         </a>
     </article>
 
-    <article class="col-lg-9 col-md-2 col-sm-3 col-xs-3 container-form">
+    <article class="col-lg-9 col-md-9 col-sm-9 col-xs-9 container-form">
 
         <section class="scholarship-holder-row-attended" ng-if="$ctrl.isAttendConfirmation">
 
@@ -30,23 +30,22 @@
             <p>{{$ctrl.scholarshipHolder.mensaje}}</p>
         </section>
 
-        <section class="scholarship-holder-row-evaluated" ng-if="$ctrl.isAttendEvalua">
-            <!--<p class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Evalua</p>-->
-            <div class="col-lg-4 col-md-2 col-sm-3 col-xs-3 fl_wrap">
-            <span uib-rating ng-model="rate" max="5" read-only="isReadonly" on-hover="hoveringOver(value)"
-                  on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating" class="rating-star"></span>
-            </div>
+        <!--<section class="scholarship-holder-row-evaluated" ng-if="$ctrl.isAttendEvalua">-->
+            <!--<div class="col-lg-4 col-md-2 col-sm-3 col-xs-3 fl_wrap">-->
+                <!--<span uib-rating ng-model="rate" max="5" read-only="isReadonly" on-hover="hoveringOver(value)"-->
+                      <!--on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating" class="rating-star"></span>-->
+            <!--</div>-->
 
-            <div class="form-field text-field col-lg-8 col-md-4 col-sm-4 col-xs-4 fl_wrap">
-                <textarea class="fl_input btn-small2" placeholder="Comentario"></textarea>
-                <!--<label class="fl_label">Comentario</label>-->
+            <!--<div class="form-field text-field col-lg-8 col-md-4 col-sm-4 col-xs-4 fl_wrap">-->
+                <!--<textarea class="fl_input btn-small2" placeholder="Comentario"></textarea>-->
+                <!--&lt;!&ndash;<label class="fl_label">Comentario</label>&ndash;&gt;-->
+            <!--</div>-->
 
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <button type="button" class="button btn-blue btn-small" ng-click="">Guardar</button>
-            </div>
-        </section>
+            <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">-->
+                <!--<button type="button" class="button btn-blue btn-small" ng-click="">Guardar</button>-->
+            <!--</div>-->
+        <!--</section>-->
+        <evaluate class="scholarship-holder-row-evaluated" ng-if="$ctrl.isAttendEvalua" hide-label="true" placeholder="Comentario" button-class="btn-small"></evaluate>
 
     </article>
 

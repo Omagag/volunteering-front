@@ -5,18 +5,18 @@
                         ($ctrl.session.status == 'CANCELED' ? 'session-canceled' :
                         ($ctrl.session.status == 'EVALUATED' ? 'session-scheduled-again' :
                         ($ctrl.session.status == 'SCHEDULED AGAIN' ? 'session-evaluated' : ''))))">
-        <p class="col-lg-2 col-md-2 col-sm-3 col-xs-3">Fecha: <span class="bold">15/06/2018</span></p>
-        <p class="col-lg-2 col-md-2 col-sm-3 col-xs-3">De <span class="bold">14:30</span> a <span class="bold">17:30</span></p>
-        <p class="col-lg-2 col-md-2 col-sm-3 col-xs-3"><span class="bold">{{$ctrl.session.status}}</span></p>
-        <section class="scholarship-holder-row-attended">
+        <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Fecha: <span class="bold">15/06/2018</span></p>
+        <p class="col-lg-2 col-md-2 col-sm-2 col-xs-2">De <span class="bold">14:30</span> a <span class="bold">17:30</span></p>
+        <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="bold">{{$ctrl.session.status}}</span></p>
+        <section class="diary-session-attended col-lg-5 col-md-5 col-sm-5 col-xs-5">
             <p class="col-lg-8 col-md-8 col-sm-6 col-xs-6">¿Se realizó la sesión?</p>
 
             <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3 fl_wrap">
-                <input type="radio" name="secundaria" value="gusta">
+                <input type="radio">
                 <label>Si</label>
             </div>
             <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3 fl_wrap">
-                <input type="radio" name="secundaria" value="gusta">
+                <input type="radio">
                 <label>No</label>
             </div>
         </section>

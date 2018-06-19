@@ -2,7 +2,24 @@ import angular from "angular";
 
 class EvaluateController {
     constructor(){
+        this.$onInit = this.init;
+    }
+    init() {
+        $(".form-evaluate").FlowupLabels({
+            feature_onInitLoad: true,
+            class_focused:      "focused",
+            class_populated:    "populated"
+        });
 
+        if (angular.isUndefined(this.hideLabel)) {
+            this.hideLabel = false;
+        }
+        if (angular.isUndefined(this.placeholder)) {
+            this.placeholder = "";
+        }
+        if (angular.isUndefined(this.buttonClass)) {
+            this.buttonClass = "";
+        }
     }
 }
 
@@ -16,6 +33,9 @@ angular.module("webapp")
            controller: EvaluateController,
            templateUrl: template,
            bindings: {
-               evaluation: "<"
+               evaluation: "<",
+               hideLabel: "<",
+               placeholder: "@",
+               buttonClass: "@"
            }
        });

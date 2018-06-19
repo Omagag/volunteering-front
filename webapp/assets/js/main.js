@@ -12,11 +12,11 @@ $(document).ready(function($){
 		$(currentOptionDescription[0]).find('.option-description').addClass('active');
 	});
 
-    $('#mentor-form').FlowupLabels({
-        feature_onInitLoad: true, 
-        class_focused:      'focused',
-        class_populated:    'populated' 
-    });
+    // $('#mentor-form').FlowupLabels({
+    //     feature_onInitLoad: true,
+    //     class_focused:      'focused',
+    //     class_populated:    'populated'
+    // });
 
     $('[data-searchfield]').on('keyup', function(e){
         var wordToSearch = $(this).val();
