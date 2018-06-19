@@ -23,6 +23,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: solid 1px #ffffff;
 }
 .scholar-nav ul li.two {
   width: 50%;
@@ -68,4 +69,17 @@
 .scholar-nav ul li.item-session-selected{
   background: #072146;
   color: #ffffff;
+}
+
+//program-nav.levels
+.scholar-nav ul li.item-disabled{
+  //background: #F4F4F4;
+  //background: linear-gradient(#F4F4F4, #BDBDBD, #F4F4F4);
+  background: linear-gradient(to right, #F4F4F4 , #E9E9E9);
+
+  color: #000000;
+}
+.scholar-nav ul li.item-disabled:hover{
+  background: #D4EDFC;
+  //color: #ffffff;
 }

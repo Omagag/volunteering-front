@@ -33,6 +33,7 @@ import "./segments/mentor/components/mentor-resume.component";
 import "./segments/layout/footer.component";
 import "./segments/layout/scholar-menu.component";
 import "./segments/layout/evaluate.component";
+import "./segments/layout/session-menu-component";
 import "./segments/layout/empty-message.component";
 import "./segments/layout/dialog.component";
 

@@ -1,0 +1,5 @@
+<div>
+    <scholar-menu scholar-menus="$ctrl.levelMenus" on-menu-selected="$ctrl.onScholarLevelMenuSelected(id)" item-id-by-default="$ctrl.levelIdByDefault"></scholar-menu>
+    <scholar-menu ng-if="$ctrl.gradeMenus.length > 0" scholar-menus="$ctrl.gradeMenus" item-selected-class="$ctrl.GRADE_SELECTED" on-menu-selected="$ctrl.onScholarGradeMenuSelected(id)" item-id-by-default="$ctrl.gradeIdByDefault"></scholar-menu>
+    <scholar-menu ng-if="$ctrl.sessionMenus.length > 0" scholar-menus="$ctrl.sessionMenus" item-selected-class="$ctrl.SESSION_SELECTED" on-menu-selected="$ctrl.onScholarSessionMenuSelected(id)"></scholar-menu>
+</div>
