@@ -2,11 +2,12 @@ import angular from "angular";
 
 class HeaderController {
     constructor(){
+        this.$onInit = this.onInit;
     }
-    burgerMenuFX() {
-        $(".burguer").on('click', function(){
-            $(this).toggleClass('active');
-            $(".container-nav").toggleClass('active');
+    onInit() {
+        $(".burguer").on("click", function(){
+            $(this).toggleClass("active");
+            $(".container-nav").toggleClass("active");
         });
     }
 }

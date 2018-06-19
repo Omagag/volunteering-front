@@ -11,7 +11,7 @@ import "./assets/styles/coronita-small.scss";
 import "./assets/styles/bbva-main.scss";
 
 // Made In-House JS
-import "./assets/js/main";
+// import "./assets/js/main";
 import "./assets/js/jquery.flowup-labels";
 
 // TODO: I'm not sure: Global Services

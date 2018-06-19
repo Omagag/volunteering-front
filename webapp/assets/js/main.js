@@ -1,16 +1,16 @@
 $(document).ready(function($){
-    $(".burguer").on('click', function(){
-        $(this).toggleClass('active');
-        $(".container-nav").toggleClass('active');
-    });
+    // $(".burguer").on('click', function(){
+    //     $(this).toggleClass('active');
+    //     $(".container-nav").toggleClass('active');
+    // });
 
-	$(".option").on('click', function(e){
-		var currentOption = $(e.currentTarget);
-		var currentOptionDescription = $(e.currentTarget).parent();
-		$(".icon-plus-q, .option-description").removeClass('active');
-		currentOption.find('.icon-plus-q').addClass('active');
-		$(currentOptionDescription[0]).find('.option-description').addClass('active');
-	});
+	// $(".option").on('click', function(e){
+	// 	var currentOption = $(e.currentTarget);
+	// 	var currentOptionDescription = $(e.currentTarget).parent();
+	// 	$(".icon-plus-q, .option-description").removeClass('active');
+	// 	currentOption.find('.icon-plus-q').addClass('active');
+	// 	$(currentOptionDescription[0]).find('.option-description').addClass('active');
+	// });
 
     // $('#mentor-form').FlowupLabels({
     //     feature_onInitLoad: true,
@@ -18,25 +18,25 @@ $(document).ready(function($){
     //     class_populated:    'populated'
     // });
 
-    $('[data-searchfield]').on('keyup', function(e){
-        var wordToSearch = $(this).val();
-        var list = $(this).attr("data-searchfield");
-        var li = $('.'+list).children();
-        if(wordToSearch != ''){
-            for (i = 0; i < li.length; i++) {
-                if($(li[i]).html().toLowerCase().indexOf(wordToSearch.toLowerCase()) > -1){
-                    $(li[i]).css('display', 'block');
-                } else {
-                    $(li[i]).css('display', 'none');
-                }
-            }
-        } else {
-            //console.log(wordToSearch);
-            for (j = 0; j < li.length; j++) {
-                $(li[j]).css('display', 'none');
-            }
-        }
-    });
+    // $('[data-searchfield]').on('keyup', function(e){
+    //     var wordToSearch = $(this).val();
+    //     var list = $(this).attr("data-searchfield");
+    //     var li = $('.'+list).children();
+    //     if(wordToSearch != ''){
+    //         for (i = 0; i < li.length; i++) {
+    //             if($(li[i]).html().toLowerCase().indexOf(wordToSearch.toLowerCase()) > -1){
+    //                 $(li[i]).css('display', 'block');
+    //             } else {
+    //                 $(li[i]).css('display', 'none');
+    //             }
+    //         }
+    //     } else {
+    //         //console.log(wordToSearch);
+    //         for (j = 0; j < li.length; j++) {
+    //             $(li[j]).css('display', 'none');
+    //         }
+    //     }
+    // });
 
     // $("#ListSeaarch li").on('click', function(){
     //     var valueList = $(this).attr('data-value');
@@ -50,42 +50,42 @@ $(document).ready(function($){
     //     });
     // });
 
-    $(".flavor-selected").on('change', function(){
-        var $this = $(this);
-        var $sliderToSHow = $('[data-tab="'+ $this.val() + '"]');
-        var $sliderActive = $('.content-post-tab.active');
-        $sliderActive.removeClass('active');
-        $sliderToSHow.addClass('active');
-    })
+    // $(".flavor-selected").on('change', function(){
+    //     var $this = $(this);
+    //     var $sliderToSHow = $('[data-tab="'+ $this.val() + '"]');
+    //     var $sliderActive = $('.content-post-tab.active');
+    //     $sliderActive.removeClass('active');
+    //     $sliderToSHow.addClass('active');
+    // })
 
-    $("[name=dirFactura]").on('click', function(){
-        if($('#dirFacturaNo').is(":checked")){  
-            $(".new-donor").slideDown();
-        } else{
-            $(".new-donor").slideUp();
-        }
-    });
+    // $("[name=dirFactura]").on('click', function(){
+    //     if($('#dirFacturaNo').is(":checked")){
+    //         $(".new-donor").slideDown();
+    //     } else{
+    //         $(".new-donor").slideUp();
+    //     }
+    // });
 
-    $(".action-icon-search").on('click', function(){
-        $(".search-header").addClass('active');
-        if ($(".search-header").hasClass('active') && $(".action-main-nav").is(':visible') && $(".search-header .search-inpunt .search").val() != '' && $(document).width() < 900) {
-            //$(".search-header .search-inpunt .search").val('');
-            $("#searchForm").submit();
-        }
-        setTimeout(function(){
-            $(".list-search").slideDown();
-            $(".action-main-nav").css('overflow', 'visible');
-        }, 500);
-    });
-
-    $(".close-icon-search").on('click', function(){
-        $(".list-search").slideUp();
-
-        setTimeout(function(){
-            $(".action-main-nav").css('overflow', 'hidden');
-            $(".search-header").removeClass('active');
-        }, 500);
-    });
+    // $(".action-icon-search").on('click', function(){
+    //     $(".search-header").addClass('active');
+    //     if ($(".search-header").hasClass('active') && $(".action-main-nav").is(':visible') && $(".search-header .search-inpunt .search").val() != '' && $(document).width() < 900) {
+    //         //$(".search-header .search-inpunt .search").val('');
+    //         $("#searchForm").submit();
+    //     }
+    //     setTimeout(function(){
+    //         $(".list-search").slideDown();
+    //         $(".action-main-nav").css('overflow', 'visible');
+    //     }, 500);
+    // });
+    //
+    // $(".close-icon-search").on('click', function(){
+    //     $(".list-search").slideUp();
+    //
+    //     setTimeout(function(){
+    //         $(".action-main-nav").css('overflow', 'hidden');
+    //         $(".search-header").removeClass('active');
+    //     }, 500);
+    // });
 
 });
 
