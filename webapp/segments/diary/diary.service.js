@@ -9,6 +9,7 @@ class DiaryService {
         // TODO: Temporal...
         this.data.sessions = [
             {
+                date: "01/06/2018",
                 status: "SCHEDULED",
                 scholarshipHolders: [
                     {
@@ -31,6 +32,7 @@ class DiaryService {
                 ]
             },
             {
+                date: "01/05/2018",
                 status: "PENDING TO EVALUATE",
                 scholarshipHolders: [
                     {
@@ -55,6 +57,7 @@ class DiaryService {
         ];
         this.data.sessionsHistorical = [
             {
+                date: "01/06/2018",
                 status: "CANCELED",
                 scholarshipHolders: [
                     {
@@ -77,28 +80,46 @@ class DiaryService {
                 ]
             },
             {
+                date: "01/06/2018",
                 status: "EVALUATED",
                 scholarshipHolders: [
                     {
                         id: 1,
-                        name: "Juan Perez"
+                        name: "Juan Perez",
+                        evaluation: {
+                            score: 4,
+                            comment: "Pudo ser más acertado en sus comentarios."
+                        }
                     },
                     {
                         id: 2,
-                        name: "Berenice Fuentes"
+                        name: "Berenice Fuentes",
+                        evaluation: {
+                            score: 3,
+                            comment: "Muy buena participación."
+                        }
                     },
                     {
                         id: 3,
-                        name: "Deborah Sánchez"
+                        name: "Deborah Sánchez",
+                        evaluation: {
+                            score: 5,
+                            comment: "Debe mejorar sus habilidades de estudio y atención."
+                        }
                     },
                     {
                         id: 4,
-                        name: "Pedro Rámirez"
+                        name: "Pedro Rámirez",
+                        evaluation: {
+                            score: 1,
+                            comment: "Debe de considerarse su continuidad en la Fundación."
+                        }
                     }
 
                 ]
             },
             {
+                date: "01/06/2018",
                 status: "SCHEDULED AGAIN",
                 scholarshipHolders: [
                     {

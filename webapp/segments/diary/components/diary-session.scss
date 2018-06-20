@@ -22,6 +22,12 @@
   align-items: center;
   padding: 0 10px;
 }
+.diary-session-evaluate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
 .session-scheduled {
   background: #BDBDBD;
 }

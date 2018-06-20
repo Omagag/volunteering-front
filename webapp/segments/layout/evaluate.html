@@ -1,15 +1,15 @@
 <form class="form-evaluate">
     <section class="evaluation-container">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-        <span uib-rating ng-model="$ctrl.evaluation.stars" max="5" read-only="isReadonly" on-hover="hoveringOver(value)"
-              on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating"
-              class="rating-star"></span>
+            <span uib-rating ng-model="$ctrl.evaluation.score" max="5" read-only="isReadonly" on-hover="hoveringOver(value)"
+                  on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating"
+                  class="rating-star"></span>
         </div>
         <div class="form-field text-field col-lg-8 col-md-8 col-sm-8 col-xs-8 fl_wrap">
             <textarea class="fl_input" placeholder="{{$ctrl.placeholder}}">{{$ctrl.evaluation.comment}}</textarea>
             <label class="fl_label" ng-if="!$ctrl.hideLabel">Comentario</label>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-if="!$ctrl.hideButton">
             <button type="button" class="button btn-evaluate" ng-class="$ctrl.buttonClass">Evaluar</button>
         </div>
     </section>

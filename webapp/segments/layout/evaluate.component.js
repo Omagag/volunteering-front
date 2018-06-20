@@ -3,6 +3,7 @@ import angular from "angular";
 class EvaluateController {
     constructor(){
         this.$onInit = this.init;
+        this.$onChanges = this.init;
     }
     init() {
         $(".form-evaluate").FlowupLabels({
@@ -16,6 +17,9 @@ class EvaluateController {
         }
         if (angular.isUndefined(this.placeholder)) {
             this.placeholder = "";
+        }
+        if (angular.isUndefined(this.hideButton)) {
+            this.hideButton = false;
         }
         if (angular.isUndefined(this.buttonClass)) {
             this.buttonClass = "";
@@ -36,6 +40,7 @@ angular.module("webapp")
                evaluation: "<",
                hideLabel: "<",
                placeholder: "@",
+               hideButton: "<",
                buttonClass: "@"
            }
        });

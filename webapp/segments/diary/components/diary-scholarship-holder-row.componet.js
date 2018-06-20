@@ -3,15 +3,26 @@ import angular from "angular";
 class DiaryScholarchipHolderRowController {
 
     constructor(){
-        this.isAttendConfirmation = true;
+        this.isAttendConfirmation = false;
         this.isAttendEvalua = false;
         // this.isAttended = "";
+
+        this.$onInit = this.onInit;
+        this.$onChanges = this.onInit;
+    }
+    onInit() {
+        if (this.readyToEvaluate) {
+            this.showAttendConfirmation(true);
+        }
+        if (this.scholarshipHolder.hasOwnProperty("evaluation")) {
+            this.showEvaluation(true);
+        }
     }
     showAttendConfirmation(show){
         this.isAttendConfirmation = show;
     }
 
-    showAttendEvalua(show){
+    showEvaluation(show){
         this.isAttendEvalua = show;
     }
 
@@ -22,11 +33,11 @@ class DiaryScholarchipHolderRowController {
         if (this.scholarshipHolder.hasOwnProperty("isAttended")) {
             if (this.scholarshipHolder.isAttended === "Si") {
                 // al dar click en "si" se va a mostrar el div de calificar y comentarios,
-                this.showAttendEvalua(true);
-                this.showAttendConfirmation(false);
+                this.showEvaluation(true);
+                this.showAttendConfirmation(true);
             } else{
                 // al dar click en "no" se debe ocultar el div de asistencia.
-                this.isAttendConfirmation = false;
+                this.showAttendConfirmation(true);
             }
         } else {
             // TODO: agregar una alerta para indicar que se debe seleccionar alguna opción
@@ -45,6 +56,7 @@ angular.module("webapp")
         controller: DiaryScholarchipHolderRowController,
         templateUrl: template,
         bindings: {
-            scholarshipHolder: "<"
+            scholarshipHolder: "<",
+            readyToEvaluate: "<"
         }
     });

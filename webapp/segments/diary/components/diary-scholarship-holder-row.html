@@ -13,19 +13,17 @@
             <p class="col-lg-3 col-md-3 col-sm-4 col-xs-4">¿Asistió?</p>
 
             <div class="col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
-                <!--<input type="radio" ng-model="$ctrl.isAttended" value="Si" name="secundaria" >-->
-                <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="Si" name="secundaria" >
+                <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="Si" ng-change="$ctrl.onConfirmAttend()">
                 <label>Si</label>
             </div>
             <div class="col-lg-3 col-md-2 col-sm-3 col-xs-3 fl_wrap">
-                <!--<input type="radio" ng-model="$ctrl.isAttended" value="No" name="secundaria">-->
-                <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="No" name="secundaria">
+                <input type="radio" ng-model="$ctrl.scholarshipHolder.isAttended" value="No" ng-change="$ctrl.onConfirmAttend()">
                 <label>No</label>
             </div>
 
-            <div>
-                <button type="button" class="button btn-blue btn-small" ng-click="$ctrl.onConfirmAttend()">Guardar</button>
-            </div>
+            <!--<div>-->
+                <!--<button type="button" class="button btn-blue btn-small" ng-click="$ctrl.onConfirmAttend()">Guardar</button>-->
+            <!--</div>-->
 
             <p>{{$ctrl.scholarshipHolder.mensaje}}</p>
         </section>
@@ -45,7 +43,8 @@
                 <!--<button type="button" class="button btn-blue btn-small" ng-click="">Guardar</button>-->
             <!--</div>-->
         <!--</section>-->
-        <evaluate class="scholarship-holder-row-evaluated" ng-if="$ctrl.isAttendEvalua" hide-label="true" placeholder="Comentario" button-class="btn-small"></evaluate>
+        <evaluate class="scholarship-holder-row-evaluated" ng-if="$ctrl.isAttendEvalua" evaluation="$ctrl.scholarshipHolder.evaluation" hide-label="true"
+                  placeholder="Comentario" hide-button="true" button-class="btn-small"></evaluate>
 
     </article>
 
