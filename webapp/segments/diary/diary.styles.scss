@@ -1,3 +1,38 @@
+.diary-material-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+}
+.diary-material-content {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.diary-material-buttons {
+  //width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //margin: 15px 0;
+}
+.diary-material-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //margin: 15px 0;
+}
+.diary-accordion {
+  display: inline-block;
+  width: 100%;
+}
+.diary-material-container p {
+  font-family: BentonSansBBVA-Bold;
+  color: #f35e61;
+  margin: 0;
+}
 .panel .panel-heading {
   text-align: left;
   width: 100%;

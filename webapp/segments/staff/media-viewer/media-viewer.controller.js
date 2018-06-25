@@ -2,9 +2,10 @@ import angular from "angular";
 
 class MediaViewerController {
 
-    constructor(MediaService, userSession){
+    constructor(MediaService, userSession, $window){
         this.userSession = userSession;
         this._mediaService = MediaService;
+        this._$window = $window;
         this.localData = this._mediaService.data;
 
         this.isMediaCointeiner = true;
@@ -130,12 +131,12 @@ class MediaViewerController {
             buttonCancelLabel: "Cerrar"
         }
     }
-    onPreview() {
-        this._$location.path("/staff/media/viewer");
+    onBack() {
+        this._$window.history.back();
     }
 }
 
-MediaViewerController.$inject = ["MediaService", "userSession"];
+MediaViewerController.$inject = ["MediaService", "userSession", "$window"];
 
 angular.module("webapp")
        .controller("MediaViewerController", MediaViewerController);

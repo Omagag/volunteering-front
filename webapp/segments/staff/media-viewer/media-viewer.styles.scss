@@ -29,5 +29,17 @@
   color: #237ABA;
   background-color: #fab27f;
 }
+.nav-back {
+  width: 100%;
+  //display: flex;
+  //align-items: center;
+  //justify-content: flex-start;
+  display: inline-block;
+  text-align: left;
+}
+.nav-back a {
 
-
+}
+.nav-back a img {
+  width: 8%;
+}
