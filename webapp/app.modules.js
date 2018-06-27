@@ -17,6 +17,7 @@ import accordion from "angular-ui-bootstrap/src/accordion";
 import datepicker from "angular-ui-bootstrap/src/datepicker";
 import dateparser from "angular-ui-bootstrap/src/dateparser";
 import rating from "angular-ui-bootstrap/src/rating";
+import modal from "angular-ui-bootstrap/src/modal";
 // import uiBootstrap from "angular-ui-bootstrap/dist/ui-bootstrap";
 import "angular-ui-bootstrap/dist/ui-bootstrap-csp.css"
 
@@ -34,6 +35,7 @@ angular.module("webapp", [
 	datepicker,
 	dateparser,
 	rating,
+	modal,
 	angularAnimate,
 	angularTouch
 	// uiBootstrap

@@ -3,8 +3,8 @@
             ng-class="$ctrl.session.status == 'SCHEDULED' ? 'session-scheduled' :
                         ($ctrl.session.status == 'PENDING TO EVALUATE' ? 'session-pending-to-evaluate' :
                         ($ctrl.session.status == 'CANCELED' ? 'session-canceled' :
-                        ($ctrl.session.status == 'EVALUATED' ? 'session-scheduled-again' :
-                        ($ctrl.session.status == 'SCHEDULED AGAIN' ? 'session-evaluated' : ''))))">
+                        ($ctrl.session.status == 'EVALUATED' ? 'session-evaluated' :
+                        ($ctrl.session.status == 'SCHEDULED AGAIN' ? 'session-scheduled-again' : ''))))">
         <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Fecha: <span class="bold">{{$ctrl.session.date}}</span></p>
         <p class="col-lg-2 col-md-2 col-sm-2 col-xs-2">De <span class="bold">14:30</span> a <span class="bold">17:30</span></p>
         <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="bold">{{$ctrl.session.status}}</span></p>
