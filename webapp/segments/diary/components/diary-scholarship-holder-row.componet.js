@@ -33,11 +33,12 @@ class DiaryScholarchipHolderRowController {
         if (this.scholarshipHolder.hasOwnProperty("isAttended")) {
             if (this.scholarshipHolder.isAttended === "Si") {
                 // al dar click en "si" se va a mostrar el div de calificar y comentarios,
-                this.showEvaluation(true);
                 this.showAttendConfirmation(true);
+                this.showEvaluation(true);
             } else{
                 // al dar click en "no" se debe ocultar el div de asistencia.
                 this.showAttendConfirmation(true);
+                this.showEvaluation(false);
             }
         } else {
             // TODO: agregar una alerta para indicar que se debe seleccionar alguna opción
