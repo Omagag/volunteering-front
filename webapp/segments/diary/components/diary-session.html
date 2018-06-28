@@ -5,29 +5,29 @@
                         ($ctrl.session.status == 'CANCELED' ? 'session-canceled' :
                         ($ctrl.session.status == 'EVALUATED' ? 'session-evaluated' :
                         ($ctrl.session.status == 'SCHEDULED AGAIN' ? 'session-scheduled-again' : ''))))">
+        <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="bold">{{$ctrl.session.status}}</span></p>
         <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Fecha: <span class="bold">{{$ctrl.session.date}}</span></p>
         <p class="col-lg-2 col-md-2 col-sm-2 col-xs-2">De <span class="bold">14:30</span> a <span class="bold">17:30</span></p>
-        <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="bold">{{$ctrl.session.status}}</span></p>
-        <section class="diary-session-attended col-lg-5 col-md-5 col-sm-5 col-xs-5" ng-if="$ctrl.session.isSessionDone">
+        <section class="diary-session-attended col-lg-5 col-md-5 col-sm-5 col-xs-5" ng-if="$ctrl.session.showSessionDoneQuestion">
             <p class="col-lg-8 col-md-8 col-sm-6 col-xs-6">¿Se realizó la sesión?</p>
 
             <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3 fl_wrap">
-                <input type="radio" ng-model="$ctrl.session.hasBeenDone" ng-value="true">
+                <input type="radio" ng-model="$ctrl.session.hasBeenDone" ng-click="$ctrl.onSessionConfirmation()" ng-value="true">
                 <label>Si</label>
             </div>
             <div class="col-lg-4 col-md-3 col-sm-3 col-xs-3 fl_wrap">
-                <input type="radio" ng-model="$ctrl.session.hasBeenDone" ng-value="false">
+                <input type="radio" ng-model="$ctrl.session.hasBeenDone" ng-click="$ctrl.onSessionConfirmation()" ng-value="false">
                 <label>No</label>
             </div>
             <div>
-                <button type="button" class="button btn-blue btn-small" ng-click="$ctrl.onSessionConfirmation()">Confirmar</button>
+                <button type="button" class="button btn-blue btn-small" >Guardar</button>
             </div>
         </section>
-        <section class="diary-session-evaluate col-lg-5 col-md-5 col-sm-5 col-xs-5" ng-if="$ctrl.session.isConfirmEvaluate">
-            <button type="button" class="button btn-evaluate btn-small">Evaluar</button>
+        <section class="diary-session-evaluate col-lg-5 col-md-5 col-sm-5 col-xs-5" ng-if="$ctrl.session.showConfirmEvaluateButton">
+            <button type="button" class="button btn-blue btn-small">Modificar</button>
         </section>
     </header>
     <section class="session-scholarship-holders" ng-repeat="scholarshipHolder in $ctrl.session.scholarshipHolders">
-        <diary-scholarchip-holder-row scholarship-holder="scholarshipHolder" ready-to-evaluate="$ctrl.session.isEvaluating"></diary-scholarchip-holder-row>
+        <diary-scholarchip-holder-row scholarship-holder="scholarshipHolder" show-attend-question="$ctrl.session.showAttendQuestion"></diary-scholarchip-holder-row>
     </section>
 </article>

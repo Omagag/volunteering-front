@@ -11,8 +11,10 @@ class DiaryScholarchipHolderRowController {
         this.$onChanges = this.onInit;
     }
     onInit() {
-        if (this.readyToEvaluate) {
+        if (this.showAttendQuestion) {
             this.showAttendConfirmation(true);
+        } else {
+            this.showAttendConfirmation(false);
         }
         if (this.scholarshipHolder.hasOwnProperty("evaluation")) {
             this.showEvaluation(true);
@@ -58,6 +60,6 @@ angular.module("webapp")
         templateUrl: template,
         bindings: {
             scholarshipHolder: "<",
-            readyToEvaluate: "<"
+            showAttendQuestion: "<"
         }
     });
