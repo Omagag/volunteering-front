@@ -11,15 +11,15 @@
     </article>
 </section>
 
-<article class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
-                <h1>This is the Diary</h1>
-            </div>
-        </div>
-    </div>
-</article>
+<!--<article class="container-fluid">-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col-xs-12 col-lg-12 col-md-12 col-sm-12">-->
+                <!--<h1>This is the Diary</h1>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</article>-->
 
 
 <article class="section-white">
@@ -27,34 +27,49 @@
         <div class="row">
             <!--aqui debería invocar el nuevo menu -->
             <session-menu level-menus="DiaryCtrl.scholarMenuData.scholarLevels" on-level-menu-selected="DiaryCtrl.onLevelOrGradeMenuSelected()" on-grade-menu-selected="DiaryCtrl.onLevelOrGradeMenuSelected()" on-session-menu-selected="DiaryCtrl.onSessionMenuSelected(id)"></session-menu>
-        </div>
-    </div>
-</article>
+        <!--</div>-->
+    <!--</div>-->
+<!--</article>-->
 
-<article class="section-white">
-    <div class="container">
-        <div class="row">
+<!--<article class="section-white">-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
 
             <section ng-if="DiaryCtrl.isDiaryShowed" class="sessions-container">
 
-                <section class="diary-material-container">
-                    <div class="diary-material-content">
-                        <section class="diary-material-buttons col-lg-6 col-md-6 col-sm-6 col-xl-6">
-                            <button type="button" class="button btn-evaluate" ng-click="DiaryCtrl.onPreview()">Visualizar material</button>
-                        </section>
-                        <section class="diary-material-message col-lg-6 col-md-6 col-sm-6 col-xl-6">
-                        <span uib-rating ng-model="DiaryCtrl.diary.material.score" max="5" read-only="true" on-hover="hoveringOver(value)"
-                              on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating"
-                              class="rating-star" ng-if="DiaryCtrl.diary.material.score > 0"></span>
-                            <p ng-if="DiaryCtrl.diary.material.score == 0">
-                                Pendiente de Evaluar.
-                            </p>
-                        </section>
-                    </div>
-                    <button type="button" ng-click="DiaryCtrl.openModal()">Open modal</button>
-                </section>
+
 
                 <uib-accordion class="diary-accordion">
+
+
+                    <!--se agrega la seccion de material en el menu acordeón-->
+                    <article uib-accordion-group is-open="true">
+                        <header uib-accordion-heading>
+                            <h4>Material de Sesión</h4>
+                        </header>
+                        <section class="diary-material-container">
+                            <div class="diary-material-content">
+                                <section class="diary-material-buttons col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <button type="button" class="button btn-evaluate" ng-click="DiaryCtrl.onPreview()">Visualizar material</button>
+                                </section>
+                                <section class="diary-material-message col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <div ng-if="DiaryCtrl.diary.material.score > 0">
+                                        <h4>Evaluación del materia:</h4>
+
+                                        <span uib-rating ng-model="DiaryCtrl.diary.material.score" max="5" read-only="true" on-hover="hoveringOver(value)"
+                                              on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating"
+                                              class="rating-star">
+
+                                        </span>
+                                    </div>
+                                    <p ng-if="DiaryCtrl.diary.material.score == 0">
+                                        Pendiente de Evaluar.
+                                    </p>
+                                </section>
+                            </div>
+                        </section>
+                    </article>
+
                     <article uib-accordion-group is-open="true">
                         <header uib-accordion-heading>
                             <h4>Pendings</h4>

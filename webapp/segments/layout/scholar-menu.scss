@@ -1,6 +1,7 @@
 .scholar-nav {
   //background-color: #fff;
-  border-bottom: 1px solid #1464A5;
+  //border-bottom: 1px solid #1464A5;
+  border-right: 1px solid #1464A5;
   margin-bottom: 2px;
 }
 
@@ -75,11 +76,21 @@
 .scholar-nav ul li.item-disabled{
   //background: #F4F4F4;
   //background: linear-gradient(#F4F4F4, #BDBDBD, #F4F4F4);
-  background: linear-gradient(to right, #F4F4F4 , #E9E9E9);
+ // background: linear-gradient(to right, #F4F4F4 , #E9E9E9);
+  background: linear-gradient(to right, #FFFFFF , #FFFFFF);
 
   color: #000000;
+
+  border-left: 1px solid #49A5E6;
+  //border-right: 1px solid #49A5E6;
+  border-bottom: 1px solid #49A5E6;
+  cursor: pointer;
 }
 .scholar-nav ul li.item-disabled:hover{
   background: #D4EDFC;
   //color: #ffffff;
+}
+
+.menu-session {
+  background:#666666;
 }
