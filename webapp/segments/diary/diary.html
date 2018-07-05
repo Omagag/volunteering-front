@@ -27,6 +27,9 @@
         <div class="row">
             <!--aqui debería invocar el nuevo menu -->
             <session-menu level-menus="DiaryCtrl.scholarMenuData.scholarLevels" on-level-menu-selected="DiaryCtrl.onLevelOrGradeMenuSelected()" on-grade-menu-selected="DiaryCtrl.onLevelOrGradeMenuSelected()" on-session-menu-selected="DiaryCtrl.onSessionMenuSelected(id)"></session-menu>
+
+
+            <!--<scholar-level-menu scholar-levels="DiaryCtrl.scholarMenuData.scholarLevels"></scholar-level-menu>-->
         </div>
     </div>
 </article>
@@ -36,25 +39,7 @@
         <div class="row">
 
             <section ng-if="DiaryCtrl.isDiaryShowed" class="sessions-container">
-
-                <section class="diary-material-container">
-                    <div class="diary-material-content">
-                        <section class="diary-material-buttons col-lg-6 col-md-6 col-sm-6 col-xl-6">
-                            <button type="button" class="button btn-evaluate" ng-click="DiaryCtrl.onPreview()">Visualizar material</button>
-                        </section>
-                        <section class="diary-material-message col-lg-6 col-md-6 col-sm-6 col-xl-6">
-                        <span uib-rating ng-model="DiaryCtrl.diary.material.score" max="5" read-only="true" on-hover="hoveringOver(value)"
-                              on-leave="overStar = null" titles="['one','two','three', 'four', 'five']" aria-labelledby="default-rating"
-                              class="rating-star" ng-if="DiaryCtrl.diary.material.score > 0"></span>
-                            <p ng-if="DiaryCtrl.diary.material.score == 0">
-                                Pendiente de Evaluar.
-                            </p>
-                        </section>
-                    </div>
-                    <button type="button" ng-click="DiaryCtrl.openModal()">Open modal</button>
-                </section>
-
-                <uib-accordion class="diary-accordion">
+                <uib-accordion>
                     <article uib-accordion-group is-open="true">
                         <header uib-accordion-heading>
                             <h4>Pendings</h4>
@@ -71,6 +56,8 @@
                             <h4>Schedules</h4>
                         </header>
                         <diary-session session="session" ng-repeat="session in DiaryCtrl.data.sessions"></diary-session>
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
                     </article>
 
                     <article uib-accordion-group>
@@ -78,6 +65,9 @@
                             <h4>Historical</h4>
                         </header>
                         <diary-session session="session" ng-repeat="session in DiaryCtrl.data.sessionsHistorical"></diary-session>
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
+                        <!--<diary-session session="DiaryCtrl.data.sessions[0]"></diary-session>-->
                     </article>
                 </uib-accordion>
             </section>
