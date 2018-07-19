@@ -43,14 +43,14 @@
 
 
                     <!--se agrega la seccion de material en el menu acordeón-->
-                    <article uib-accordion-group is-open="true">
-                        <header uib-accordion-heading>
+                    <article class="">
+                        <!--<header uib-accordion-heading>
                             <h4>Material de Sesión</h4>
-                        </header>
+                        </header>-->
                         <section class="diary-material-container">
-                            <div class="diary-material-content">
+                            <div class="diary-material-content ">
                                 <section class="diary-material-buttons col-lg-6 col-md-6 col-sm-6 col-xl-6">
-                                    <button type="button" class="button btn-evaluate" ng-click="DiaryCtrl.onPreview()">Visualizar material</button>
+                                    <button type="txt" class="button btn-small btn-transparent" ng-click="DiaryCtrl.onPreview()">Visualizar material</button>
                                 </section>
                                 <section class="diary-material-message col-lg-6 col-md-6 col-sm-6 col-xl-6">
                                     <div ng-if="DiaryCtrl.diary.material.score > 0">
