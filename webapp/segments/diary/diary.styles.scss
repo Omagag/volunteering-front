@@ -6,10 +6,13 @@
   margin: 15px 0;
 }
 .diary-material-content {
-  width: 45%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #D4EDFC;
+  height: 90px;
+
 }
 .diary-material-buttons {
   //width: 100%;
@@ -95,3 +98,12 @@
   width: 59%;
 }
 
+.btn-transparent {
+  border: 1px solid #1464A5;
+  background-color: transparent;
+  color: #666666;
+}
+.btn-transparent:hover {
+  background-color: #1464A5;
+  color: #ffffff;
+}
