@@ -13,7 +13,7 @@ front_bp.before_request(BeforeRequestFlow(oauth_filter=False))
 def index(path):
     return flask.render_template(
         'index.html',
-        title='Example',
+        title='Volunteering',
         session=flask.session['user_session'],
         environment=__load_environment()
     )
