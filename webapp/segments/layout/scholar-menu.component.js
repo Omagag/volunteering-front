@@ -96,6 +96,7 @@ angular.module("webapp")
                scholarMenus: "<", // Array use to fill the Menus with the "id" and "name".
                itemIdByDefault: "<", // This will select the menu with the "id" introduced, if it's empty will no select nothing.
                itemSelectedClass: "<", // Custom class for give style at the menu selected.
+               itemDefaultClass: "<", // variable para cambiar el color de fondo del menu de sesiones
                onMenuSelected: "&" // Function that will be invoked when any menu has been selected. The function will be receive the parameter "id".
            }
        });

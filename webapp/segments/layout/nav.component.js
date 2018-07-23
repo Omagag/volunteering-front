@@ -36,6 +36,7 @@ class NavController {
 NavController.$inject = [];
 
 import template from "./nav.html";
+import "./nav.scss";
 
 angular.module("webapp")
        .component("appNav", {
