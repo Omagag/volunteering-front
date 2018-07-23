@@ -45,15 +45,15 @@ class ScholarLevelService {
                 scholarGrades: [
                     {
                         id: 3,
-                        name: "1 año"
+                        name: "1er Grado"
                     },
                     {
                         id: 4,
-                        name: "2 año"
+                        name: "2o Grado"
                     },
                     {
                         id: 5,
-                        name: "3 año"
+                        name: "3er Grado"
                     }
                 ]
             },
@@ -63,23 +63,23 @@ class ScholarLevelService {
                 scholarGrades: [
                     {
                         id: 6,
-                        name: "1 año"
+                        name: "1er Grado"
                     },
                     {
                         id: 7,
-                        name: "2 año"
+                        name: "2o Grado"
                     },
                     {
                         id: 8,
-                        name: "3 año"
+                        name: "3er Grado"
                     },
                     {
                         id: 9,
-                        name: "4 año"
+                        name: "4to Grado"
                     },
                     {
                         id: 10,
-                        name: "5 año"
+                        name: "5to Grado"
                     }
                 ]
             }
