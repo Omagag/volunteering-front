@@ -1,10 +1,23 @@
 import angular from "angular";
 
 class NavController {
-    constructor(){
+    constructor($location){
+
+        this.menus = [
+            {name: "Mi Perfil", url: "/", class: ""},
+            {name: "Mi Agenda", url: "/diary", class: ""},
+            {name: "Lista de Becarios", url: "/scholarship-holder/", class: ""},
+            {name: "Carga Multimedia", url: "/staff/media/loader", class: ""}
+        ];
+        this.classSelected = "selected";
+
+        this.uri = $location.$$url;
+
         this.$onInit = this.onInit;
     }
     onInit() {
+        this.buildMenu();
+
         if (angular.isUndefined(this.isSearchOption)) {
             this.isSearchOption = true;
         }
@@ -31,9 +44,18 @@ class NavController {
             });
         }
     }
+    buildMenu() {
+        this.menus.forEach((menu) => {
+            if (menu.url === this.uri) {
+                menu.class = this.classSelected;
+            } else {
+                menu.class = "";
+            }
+        });
+    }
 }
 
-NavController.$inject = [];
+NavController.$inject = ["$location"];
 
 import template from "./nav.html";
 import "./nav.scss";

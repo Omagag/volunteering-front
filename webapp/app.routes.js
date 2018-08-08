@@ -40,7 +40,7 @@ import "./segments/layout/dialog.component";
 let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
 
     $routeSegmentProvider
-        .segment( "home", homeRoute )
+        // .segment( "home", homeRoute )
         .segment("mentor", mentorRoute)
         .segment("scholarshipHolder", scholarshipHolderRoute)
         .segment("scholarshipHolderCard", scholarshipHolderCardRoute)
@@ -49,8 +49,8 @@ let routing = ( $routeSegmentProvider, $routeProvider, $locationProvider ) => {
         .segment("mediaViewer" , mediaViewerRoute);
 
     $routeSegmentProvider
-		.when( "/", "home" )
-        .when("/mentor/", "mentor")
+		// .when( "/", "home" )
+        .when("/", "mentor")
         .when("/scholarship-holder/", "scholarshipHolder")
         .when("/scholarship-holder/:id/card", "scholarshipHolderCard")
         .when("/diary", "diary")
