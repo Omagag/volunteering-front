@@ -1,7 +1,8 @@
 <!--<link rel="stylesheet" type="text/css" href="./home.styles.scss"/>-->
 
-<app-header></app-header>
-<app-nav is-search-option="false"></app-nav>
+<!--<app-header></app-header>-->
+<!--<app-nav is-search-option="false"></app-nav>-->
+<app-header-nav></app-header-nav>
 
 <!--<span>{{ 'home.helloWorld' | translate }}</span>-->
 <h1>Welcome to Volunteering Application Web</h1>
@@ -10,7 +11,16 @@
 
 <!--<div class="green"></div>-->
 
+<p>
+    <button type="button" ng-click="hide = !hide">toggle</button>
+</p>
 
+<div ng-hide="hide">
+    Je suis ici
+</div>
+<div>
+    on ne va null part!!
+</div>
 <!--<a href="/mentor/card">Ficha Técnica</a>-->
 <!--<a href="/scholarship-holder/">Scholarship Holder Home</a>-->
 

@@ -29,6 +29,7 @@ import mediaViewerRoute from "./segments/staff/media-viewer/media-viewer.routes"
 // Components
 import "./segments/layout/header.component";
 import "./segments/layout/nav.component";
+import "./segments/layout/header+nav.component";
 import "./segments/mentor/components/mentor-resume.component";
 import "./segments/layout/footer.component";
 import "./segments/layout/scholar-menu.component";
