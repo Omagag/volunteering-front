@@ -12,7 +12,7 @@ class MediaService {
             {id: 1, name: "URL"},
             {id: 2, name: "Archivo word"},
             {id: 3, name: "Archivo Excel"},
-            {id: 4, name: "Presentación Power Point"},
+            {id: 4, name: "Presentación Power Point"}
         ]
     }
 
