@@ -13,6 +13,9 @@ lib/
 .vscode
 **/*.iml
 
+# MAC
+.DS_Store
+
 # Virtual environment
 venv/
 
