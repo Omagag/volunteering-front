@@ -14,7 +14,11 @@ import "./assets/styles/bbva-main.scss";
 // import "./assets/js/main";
 import "./assets/js/jquery.flowup-labels";
 
+// Entities
+import "./segments/vos/Entities";
+
 // TODO: I'm not sure: Global Services
+import "./segments/services/api-client";
 import "./segments/services/scholar-level.service";
 
 // Views

@@ -2,8 +2,15 @@ import angular from "angular";
 
 class ScholarshipHolderService {
 
-    constructor() {
+    constructor(ClientAPI, Scholar) {
+    // constructor($http, Scholar) {
         this.data = {};
+        // this._clientApi = new ClientAPI("https://localhost:8082/s");
+        this._clientApi = ClientAPI;
+        this._clientApi.setUrlBase("http://localhost:8082/s");
+        // this.$http= $http;
+        this._scholar = new Scholar();
+
         this.preloadedData = [
             {
                 id: 1,
@@ -210,16 +217,27 @@ class ScholarshipHolderService {
             }
         ];
     }
-    get(id) {
-        this.preloadedData.forEach((scholarshipHolder) => {
-            if (scholarshipHolder.id === id) {
-                this.data.scholarshipHolder = scholarshipHolder;
+    getScholarshipHolder(id) {
+        // let scholarshipHolder = {};
+        // let scholarshipHolder = new Scholar();
+
+        let promise = this._clientApi.get("/ws/scholar/getScholars/" + id).then(
+            (data) => {
+                // return scholarshipHolder = this._scholar.build(data);
+                this.data.scholarshipHolder = this._scholar.build(data);
             }
-        });
+        );
+
+        // return scholarshipHolder;
     }
     loadList() {
         this.data.scholarshipHolders = this.preloadedData;
     }
 }
+
+ScholarshipHolderService.$inject = ["ClientAPI", "Scholar"];
+// ScholarshipHolderService.$inject = ["Shttp", "Scholar"];
+
 angular.module("webapp")
     .service("ScholarshipHolderService", ScholarshipHolderService);
+    // .factory("ScholarshipHolderService", (ClientAPI, Scholar) => {return ScholarshipHolderService});
