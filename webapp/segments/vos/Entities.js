@@ -22,7 +22,6 @@ class Mentor {
         // this.scholars = [];
         // this.sessions = [];
 
-
         this.person = new Person();
         this.employee = new Employee();
     }
@@ -42,7 +41,10 @@ class Person {
         this.telephone = telephone;
         this.schooling = schooling;
     }
-    build(data) {
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
         return new Person(
             // TODO: Replace for the correct names in the service
             data.name,
@@ -56,9 +58,20 @@ class Person {
             Telephone.build(data.telephone),
             Schooling.build(data.schooling)
         );
-    };
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let persons = [];
+        array.forEach((data)=>{
+            persons.push(Person.build(data));
+        });
+        return persons;
+    }
 }
-angular.module("webapp").factory("Person", function(Address, Telephone, Schooling){return Person});
+Person.$inject = ["Address", "Telephone", "Schooling"];
+angular.module("webapp").factory("Person", (Address, Telephone, Schooling)=>{return Person});
 
 class Employee {
     constructor() {
@@ -73,6 +86,101 @@ class Employee {
     }
 }
 
+class Scholar {
+    constructor(id, schooling, biography, person, scholarshipProgram) {
+        this.id = id;
+        this.schooling = schooling;
+        this.biography = biography;
+        this.person = person;
+        this.scholarshipProgram = scholarshipProgram;
+        // this.mentor = mentor; // We theoretically mustn't use this field.
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new Scholar(
+            // TODO: Replace for the correct names in the service
+            data.id,
+            Schooling.build(data.schooling),
+            Biography.build(data.biography),
+            Person.build(data.person),
+            OptionList.buildArray(data.scholarshipProgram) // This must build an Array!!!
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let scholars = [];
+        array.forEach((data)=>{
+            scholars.push(Scholar.build(data));
+        });
+        return scholars;
+    }
+}
+Scholar.$inject = ["Person"];
+angular.module("webapp").factory("Scholar", (Person)=>{return Scholar});
+
+class Schooling {
+    constructor(schoolLevel, schoolName, career, academicAverage) {
+        this.schoolLevel = schoolLevel;
+        this.schoolName = schoolName;
+        this.career = career;
+        this.academicAverage = academicAverage;
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new Schooling(
+            // TODO: Replace for the correct names in the service
+            data.schoolLevel,
+            data.schoolName,
+            data.career,
+            data.academicAverage
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let schoolings = [];
+        array.forEach((data)=>{
+            schoolings.push(Schooling.build(data));
+        });
+        return schoolings;
+    }
+}
+angular.module("webapp").factory("Schooling", function(){return Schooling});
+
+class Biography {
+    constructor(aboutMe, personalInterests) {
+        this.aboutMe = aboutMe;
+        this.personalInterests = personalInterests;
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new Biography(
+            // TODO: Replace for the correct names in the service
+            data.aboutMe,
+            OptionList.buildArray(data.personalInterests) // This must build an Array!!!
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let biographies = [];
+        array.forEach((data)=>{
+            biographies.push(Biography.build(data));
+        });
+        return biographies;
+    }
+}
+
 class Telephone {
     constructor(cellPhoneNumber, cellPhoneRegionalCode, officePhone, telephoneExtension, officePhoneRegionalCode) {
         this.cellPhoneNumber = cellPhoneNumber;
@@ -81,7 +189,10 @@ class Telephone {
         this.telephoneExtension = telephoneExtension;
         this.officePhoneRegionalCode = officePhoneRegionalCode;
     }
-    build(data) {
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
         return new Telephone(
             // TODO: Replace for the correct names in the service
             data.cellPhoneNumber,
@@ -90,7 +201,17 @@ class Telephone {
             data.telephoneExtension,
             data.officePhoneRegionalCode
         );
-    };
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let telephones = [];
+        array.forEach((data)=>{
+            telephones.push(Telephone.build(data));
+        });
+        return telephones;
+    }
 }
 angular.module("webapp").factory("Telephone", function(){return Telephone});
 
@@ -102,7 +223,10 @@ class Address {
         this.state = state;
         this.region = region;
     }
-    build(data) {
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
         return new Address(
             // TODO: Replace for the correct names in the service
             data.fullAddress,
@@ -110,7 +234,17 @@ class Address {
             State.build(data.state),
             Region.build(data.region)
         );
-    };
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let addresses = [];
+        array.forEach((data)=>{
+            addresses.push(Address.build(data));
+        });
+        return addresses;
+    }
 }
 angular.module("webapp").factory("Address", function(State, Region){return Address});
 
@@ -118,12 +252,25 @@ class State {
     constructor() {
         this.name = "";
     }
-    build(data) {
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
         return new State(
             // TODO: Replace for the correct names in the service
             data.name
         );
-    };
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let states = [];
+        array.forEach((data)=>{
+            states.push(State.build(data));
+        });
+        return states;
+    }
 }
 angular.module("webapp").factory("State", function(){return State});
 
@@ -131,39 +278,54 @@ class Region {
     constructor() {
         this.name = "";
     }
-    build(data) {
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
         return new Region(
             // TODO: Replace for the correct names in the service
             data.name
         );
-    };
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let regions = [];
+        array.forEach((data)=>{
+            regions.push(Region.build(data));
+        });
+        return regions;
+    }
 }
 angular.module("webapp").factory("Region", function(){return Region});
 
-class Schooling {
-    constructor(schoolLevel, schoolName, career, academicAverage) {
-        this.schoolLevel = schoolLevel;
-        this.schoolName = schoolName;
-        this.career = career;
-        this.academicAverage = academicAverage;
-    }
-    build(data) {
-        return new Schooling(
-            // TODO: Replace for the correct names in the service
-            data.schoolLevel,
-            data.schoolName,
-            data.career,
-            data.academicAverage
-        );
-    };
-}
-angular.module("webapp").factory("Schooling", function(){return Schooling});
-
 class OptionList {
-    constructor() {
-        this.id = "";
-        this.description = "";
-        this.status = "";
+    constructor(id, description, status) {
+        this.id = id;
+        this.description = description;
+        this.status = status;
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new Region(
+            // TODO: Replace for the correct names in the service
+            data.id,
+            data.description,
+            data.status
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let optionLists = [];
+        array.forEach((data)=>{
+            optionLists.push(OptionList.build(data));
+        });
+        return optionLists;
     }
 }
 
@@ -172,24 +334,6 @@ class TechnicalDate {
         this.message = "";
     }
 }
-
-class Scholar {
-    constructor(id, person, scholarshipProgram) {
-        this.id = id;
-        this.person = person;
-        this.scholarshipProgram = scholarshipProgram;
-    }
-    build(data) {
-        return new Scholar(
-            // TODO: Replace for the correct names in the service
-            data.id,
-            Person.build(data.person),
-            data.scholarshipProgram
-        );
-    };
-}
-Scholar.$inject = ["Person"];
-angular.module("webapp").factory("Scholar", function(Person){return Scholar});
 
 // class Pagination {
 //     constructor() {

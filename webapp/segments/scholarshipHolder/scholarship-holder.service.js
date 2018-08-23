@@ -5,11 +5,12 @@ class ScholarshipHolderService {
     constructor(ClientAPI, Scholar) {
     // constructor($http, Scholar) {
         this.data = {};
-        // this._clientApi = new ClientAPI("https://localhost:8082/s");
         this._clientApi = ClientAPI;
-        this._clientApi.setUrlBase("http://localhost:8082/s");
+        // this._clientApi.setUrlBase("http://localhost:8082/s");
+        this._clientApi.setUrlBase("https://dev-bbva-becas-voluntariado-sp.appspot.com/s");
         // this.$http= $http;
-        this._scholar = new Scholar();
+        this._scholar = new Scholar("", "", "");
+        this.Scholar = Scholar;
 
         this.preloadedData = [
             {
@@ -218,17 +219,14 @@ class ScholarshipHolderService {
         ];
     }
     getScholarshipHolder(id) {
-        // let scholarshipHolder = {};
-        // let scholarshipHolder = new Scholar();
-
         let promise = this._clientApi.get("/ws/scholar/getScholars/" + id).then(
             (data) => {
-                // return scholarshipHolder = this._scholar.build(data);
-                this.data.scholarshipHolder = this._scholar.build(data);
+                // return scholarshipHolder = this.Scholar.build(data);
+                this.data.scholarshipHolder = this.Scholar.build(data);
+
+                // console.log(this.data.scholarshipHolder);
             }
         );
-
-        // return scholarshipHolder;
     }
     loadList() {
         this.data.scholarshipHolders = this.preloadedData;
@@ -236,7 +234,7 @@ class ScholarshipHolderService {
 }
 
 ScholarshipHolderService.$inject = ["ClientAPI", "Scholar"];
-// ScholarshipHolderService.$inject = ["Shttp", "Scholar"];
+// ScholarshipHolderService.$inject = ["$http", "Scholar"];
 
 angular.module("webapp")
     .service("ScholarshipHolderService", ScholarshipHolderService);
