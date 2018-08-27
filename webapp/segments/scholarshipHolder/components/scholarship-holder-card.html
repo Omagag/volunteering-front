@@ -26,25 +26,15 @@
 <section class="section-white">
     <h4 class="border-after-name-section">Mis intereses</h4>
     <div class="container-data-card">
-        <div class="item-container-data-card">
-            <ul>
-                <li class="list-interests">Coffee</li>
-                <li class="list-interests">Tea</li>
-                <li class="list-interests">Milk</li>
-            </ul>
-        </div>
-        <div class="item-container-data-card">
-            <ul>
-                <li class="list-interests">Coffee</li>
-                <li class="list-interests">Tea</li>
-                <li class="list-interests">Milk</li>
-            </ul>
-        </div>
+        <p class="item-container-interests-card" ng-repeat="interest in $ctrl.scholarshipHolder.scholarBiography[0].interest">
+            <img class="list-interests" src="../../../assets/img/vineta.png"></img>{{interest.description}}
+        </p>
     </div>
 </section>
 <section class="section-white ">
     <h4 class="border-after-name-section">Mis Sesiones</h4>
     <div class="sessions-wrapper">
         <scholarship-holder-session-card class="container-componet-session" session="session" ng-repeat="session in $ctrl.scholarshipHolder.sessions"></scholarship-holder-session-card>
+        <empty-message class="empty-message" ng-if="!$ctrl.scholarshipHolder.sessions" message="Próximamente podrás ver aquí el estatus de las Sesiones."></empty-message>
     </div>
 </section>

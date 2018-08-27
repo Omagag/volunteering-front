@@ -17,9 +17,20 @@
   width: 33.3%;
 }
 
+//.list-interests{
+//  list-style-type: none;
+//  list-style-image: url(../../../assets/img/vineta.png);
+//}
+
+.item-container-interests-card {
+  width: 33.3%;
+  display: flex;
+  align-items: center;
+}
 .list-interests{
-  list-style-type: none;
-  list-style-image: url(../../../assets/img/vineta.png);
+  display: inline-flex;
+  width: 10px;
+  margin-right: 5px;
 }
 
 .sessions-wrapper {
@@ -27,6 +38,9 @@
   width: 100%;
   flex-flow: row wrap;
 
+}
+.empty-message {
+  width: 100%;
 }
 .container-componet-session{
   display: inline-block;
@@ -38,6 +52,9 @@
 }
 
 @media (max-width: 1024px) {
+  .label-scholarship-holder {
+    display: block;
+  }
   .item-container-data-card {
     width: 33.3%;
   }
@@ -47,6 +64,9 @@
 
 }
 @media (max-width: 767px) {
+  .label-scholarship-holder {
+    display: block;
+  }
   .item-container-data-card {
     width: 33.3%;
   }
@@ -55,6 +75,9 @@
   }
 }
 @media (max-width: 425px) {
+  .label-scholarship-holder {
+    display: block;
+  }
   .item-container-data-card {
     width: 100%;
   }
