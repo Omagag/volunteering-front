@@ -1,33 +1,29 @@
 <section class="section-white">
-    <h3 class="bbva-medium-blue border-after-name-section">{{$ctrl.scholarshipHolder.name}}</h3>
+    <h3 class="bbva-medium-blue border-after-name-section">{{$ctrl.scholarshipHolder.name}} {{$ctrl.scholarshipHolder.firstName}} {{$ctrl.scholarshipHolder.lastName}}</h3>
     <div class="container-data-card">
         <div class="item-container-data-card">
             <img src="../../../assets/img/foto_perfil.png">
         </div>
 
-        <!--<div class="data-card">-->
         <div class="item-container-data-card">
-            <p>{{$ctrl.scholarshipHolder.campus}}</p>
-            <p>{{$ctrl.scholarshipHolder.school}}</p>
-            <p>{{$ctrl.scholarshipHolder.grade}}</p>
-            <p>{{$ctrl.scholarshipHolder.average}}</p>
+            <p><span class="label-scholarship-holder">Campus: </span>{{$ctrl.scholarshipHolder.schoolData[0].school[0].name}}</p>
+            <p><span class="label-scholarship-holder">Universidad: </span>{{$ctrl.scholarshipHolder.scholarBiography[0].scholarLevel}}</p>
+            <p><span class="label-scholarship-holder">Grado: </span>{{$ctrl.scholarshipHolder.programScholar[0].schoolGrade}}</p>
+            <p><span class="label-scholarship-holder">Promedio: </span>{{$ctrl.scholarshipHolder.scholarBiography[0].levelAverage}}</p>
         </div>
         <div class="item-container-data-card">
-            <p>Cel: <span>#### ####</span></p>
-            <p>Tel de casa: <span>#### ####</span></p>
-            <p>berenice.fuentes@gmail.com</p>
+            <p><span class="label-scholarship-holder">Cel: </span>{{$ctrl.scholarshipHolder.contactInf[0].cellPhone}}</p>
+            <p><span class="label-scholarship-holder">Tel de casa: </span><span>{{$ctrl.scholarshipHolder.contactInf[0].homePhone}}</span></p>
+            <p><span class="label-scholarship-holder">Correo: </span>{{$ctrl.scholarshipHolder.contactInf[0].email}}</p>
         </div>
         <!--</div>-->
     </div>
 </section>
 <section class="section-white">
-    <!--<section class="">-->
     <h4 class="border-after-name-section">Mi biograf&iacute;a</h4>
-    <p>{{$ctrl.scholarshipHolder.biography}}</p>
-    <!--</section>-->
+    <p>{{$ctrl.scholarshipHolder.scholarBiography[0].biography}}</p>
 </section>
 <section class="section-white">
-    <!--<section class="">-->
     <h4 class="border-after-name-section">Mis intereses</h4>
     <div class="container-data-card">
         <div class="item-container-data-card">
@@ -45,61 +41,10 @@
             </ul>
         </div>
     </div>
-    <!--</section>-->
 </section>
 <section class="section-white ">
-    <!--<section class="">-->
     <h4 class="border-after-name-section">Mis Sesiones</h4>
     <div class="sessions-wrapper">
         <scholarship-holder-session-card class="container-componet-session" session="session" ng-repeat="session in $ctrl.scholarshipHolder.sessions"></scholarship-holder-session-card>
-        <!--<div class="container-session">-->
-            <!--<h5>Sesi&oacute;n Uno</h5>-->
-            <!--<div class="rectangle-done">-->
-                <!--<p>Fecha: <span>14/05/2018</span></p>-->
-                <!--<p>Hora: <span>16:33</span></p>-->
-                <!--<p>Estatus: <span>Realizada y Evaluada</span></p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="container-session">-->
-            <!--<h5>Sesi&oacute;n Dos</h5>-->
-            <!--<div class="rectangle-scheduled">-->
-                <!--<p>Fecha: <span>14/05/2018</span></p>-->
-                <!--<p>Hora: <span>16:33</span></p>-->
-                <!--<p>Estatus: <span>Agendada</span></p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="container-session">-->
-            <!--<h5>Sesi&oacute;n Tres</h5>-->
-            <!--<div class="rectangle-not-scheduled">-->
-                <!--<p>Fecha: <span>&#45;&#45;/&#45;&#45;/&#45;&#45;&#45;&#45;</span></p>-->
-                <!--<p>Hora: <span>&#45;&#45;:&#45;&#45;</span></p>-->
-                <!--<p>Estatus: <span>No agendada</span></p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="container-session">-->
-            <!--<h5>Sesi&oacute;n Cuatro</h5>-->
-            <!--<div class="rectangle-pending-and-evaluated">-->
-                <!--<p>Fecha: <span>14/07/2018</span></p>-->
-                <!--<p>Hora: <span>16:33</span></p>-->
-                <!--<p>Estatus: <span>Pendiente por Evaluar</span></p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="container-session">-->
-            <!--<h5>Sesi&oacute;n Cinco</h5>-->
-            <!--<div class="rectangle-not-done-and-evaluated">-->
-                <!--<p>Fecha: <span>14/07/2018</span></p>-->
-                <!--<p>Hora: <span>16:33</span></p>-->
-                <!--<p>Estatus: <span>No realizada y Evaluada</span></p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="container-session">-->
-            <!--<h5>Sesi&oacute;n Seis</h5>-->
-            <!--<div class="rectangle-not-scheduled">-->
-                <!--<p>Fecha: <span>&#45;&#45;/&#45;&#45;/&#45;&#45;</span></p>-->
-                <!--<p>Hora: <span>&#45;&#45;:&#45;&#45;</span></p>-->
-                <!--<p>Estatus: <span>No Agendado</span></p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--</section>-->
     </div>
 </section>

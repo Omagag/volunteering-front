@@ -18,7 +18,7 @@ import "./assets/js/jquery.flowup-labels";
 import "./segments/vos/Entities";
 
 // TODO: I'm not sure: Global Services
-import "./segments/services/api-client";
+// import "./segments/services/api-client";
 import "./segments/services/scholar-level.service";
 
 // Views

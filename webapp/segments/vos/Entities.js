@@ -123,7 +123,8 @@ Scholar.$inject = ["Person"];
 angular.module("webapp").factory("Scholar", (Person)=>{return Scholar});
 
 class Schooling {
-    constructor(schoolLevel, schoolName, career, academicAverage) {
+    constructor(universityName, schoolLevel, schoolName, career, academicAverage) {
+        this.universityName = universityName;
         this.schoolLevel = schoolLevel;
         this.schoolName = schoolName;
         this.career = career;
@@ -135,6 +136,7 @@ class Schooling {
         }
         return new Schooling(
             // TODO: Replace for the correct names in the service
+            data.universityName,
             data.schoolLevel,
             data.schoolName,
             data.career,
@@ -328,6 +330,7 @@ class OptionList {
         return optionLists;
     }
 }
+angular.module("webapp").factory("OptionList", function(){return OptionList});
 
 class TechnicalDate {
     constructor() {
@@ -395,3 +398,185 @@ class ScheduledSession{
         this.lastSessionDate="";
     }
 }
+
+class Student {
+    constructor(name, firstName, lastName, schoolData, scholarBiography, programScholar, contactInf) {
+        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.schoolData = schoolData;
+        this.scholarBiography = scholarBiography;
+        this.programScholar = programScholar;
+        this.contactInf = contactInf;
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new Student(
+            // TODO: Replace for the correct names in the service
+            data.name,
+            data.firstName,
+            data.lastName,
+            SchoolData.buildArray(data.schoolData),
+            ScholarBiography.buildArray(data.scholarBiography),
+            ProgramScholar.buildArray(data.programScholar),
+            ContactInfo.buildArray(data.contactInf)
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let students = [];
+        array.forEach((data)=>{
+            students.push(Student.build(data));
+        });
+        return students;
+    }
+}
+Student.$inject = ["School", "ScholarBiography", "ProgramScholar", "ContactInfo"];
+angular.module("webapp").factory("Student", function(School, ScholarBiography, ProgramScholar, ContactInfo){return Student});
+
+class School {
+    constructor(name) {
+        this.name = name;
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new School(
+            // TODO: Replace for the correct names in the service
+            data.name
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let schools = [];
+        array.forEach((data)=>{
+            schools.push(School.build(data));
+        });
+        return schools;
+    }
+}
+angular.module("webapp").factory("School", function(){return School});
+
+class SchoolData {
+    constructor(school) {
+        this.school = school;
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new SchoolData(
+            // TODO: Replace for the correct names in the service
+            School.buildArray(data.school)
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let schoolDatas = [];
+        array.forEach((data)=>{
+            schoolDatas.push(SchoolData.build(data));
+        });
+        return schoolDatas;
+    }
+}
+SchoolData.$inject = ["School"];
+angular.module("webapp").factory("SchoolData", function(School){return SchoolData});
+
+class ProgramScholar {
+    constructor(schoolGrade) {
+        this.schoolGrade = schoolGrade;
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new ProgramScholar(
+            // TODO: Replace for the correct names in the service
+            data.schoolGrade
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let programScholars = [];
+        array.forEach((data)=>{
+            programScholars.push(ProgramScholar.build(data));
+        });
+        return programScholars;
+    }
+}
+angular.module("webapp").factory("ProgramScholar", function(){return ProgramScholar});
+
+class ScholarBiography {
+    constructor(scholarLevel, levelAverage, biography, interest) {
+        this.scholarLevel = scholarLevel;
+        this.levelAverage = levelAverage;
+        this.biography = biography;
+        this.interest = interest;
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new ScholarBiography(
+            // TODO: Replace for the correct names in the service
+            data.scholarLevel,
+            data.levelAverage,
+            data.biography,
+            data.interest
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let scholarBiographies = [];
+        array.forEach((data)=>{
+            scholarBiographies.push(ScholarBiography.build(data));
+        });
+        return scholarBiographies;
+    }
+}
+ScholarBiography.$inject = ["OptionList"];
+angular.module("webapp").factory("ScholarBiography", function(OptionList){return ScholarBiography});
+
+
+class ContactInfo {
+    constructor(cellPhone, homePhone, email) {
+        this.cellPhone = cellPhone;
+        this.homePhone = homePhone;
+        this.email = email;
+    }
+    static build(data) {
+        if (angular.isUndefined(data)) {
+            return;
+        }
+        return new ContactInfo(
+            // TODO: Replace for the correct names in the service
+            data.cellPhone,
+            data.homePhone,
+            data.email
+        );
+    }
+    static buildArray(array) {
+        if (angular.isUndefined(array)) {
+            return;
+        }
+        let contactInfos = [];
+        array.forEach((data)=>{
+            contactInfos.push(ContactInfo.build(data));
+        });
+        return contactInfos;
+    }
+}
+angular.module("webapp").factory("ContactInfo", function(){return ContactInfo});
